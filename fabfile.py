@@ -21,7 +21,7 @@ env.cloudfiles_container = 'my_cloudfiles_container'
 
 def clean():
     if os.path.isdir(DEPLOY_PATH):
-        local('rm -rf {deploy_path}/*'.format(**env))
+        local('rm -rf {deploy_path}/*.html'.format(**env))
         #local('mkdir {deploy_path}'.format(**env))
 
 def build():
