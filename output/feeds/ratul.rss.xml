@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ratul's Rants</title><link>/</link><description>Ratul's thoughts on life, universe, and everything else, with a sprinkle of Mozilla.</description><atom:link href="/feeds/ratul.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 30 Jul 2014 01:08:00 +0600</lastBuildDate><item><title>আসুন পেলিকানের মত পাখা মেলি</title><link>/posts/2014/07/30/%E0%A6%86%E0%A6%B8%E0%A7%81%E0%A6%A8-%E0%A6%AA%E0%A7%87%E0%A6%B2%E0%A6%BF%E0%A6%95%E0%A6%BE%E0%A6%A8%E0%A7%87%E0%A6%B0-%E0%A6%AE%E0%A6%A4-%E0%A6%AA%E0%A6%BE%E0%A6%96%E0%A6%BE-%E0%A6%AE%E0%A7%87%E0%A6%B2%E0%A6%BF/</link><description>&lt;p&gt;অল;পলন* - বিশিষ্ট নুব-দের জন্য শিশুতোষ ভঙ্গীমায় লেখা। ভচ পাবলিকরা এড়িয়ে যান, টিশুর বদলে শিরীষ কাগজ ব্যবহার করেন। &lt;a href="http://docs.getpelican.com/en/3.4.0/index.html"&gt;ডকুমেন্টেশন&lt;/a&gt; পড়েন।  &lt;/p&gt;
+&lt;p&gt;সত্যি বলতে আমি ওয়ার্ডপ্রেস খুব খুব খুব ভালবাসি &amp;lt;3 সমস্যা হল, আমার মত ছোটখাট ব্লগারের ছোট ছোট পোস্ট দিতে ওয়ার্ডপ্রেস ব্যবহার করা মশা মারতে কামান দাগানোর মতন। অন্যদিকে, কোথায় হোস্ট করব, কতই বা খরচা পড়বে এসব হিসাব নিকাশ করতে করতে আমার আর কখনই সিরিয়াস ভাবে ব্লগিং করা শুরু করা হল না -_- ফৃ হোস্টিং সাইটগুলোর কথা আর না-ই বা বলি, টাকা পয়সা ছাড়াই যা সুবিধা দেয়; কিন্তু স্বস্তার তিন অবস্থা সূত্র অনুসারে ওদের সার্ভিস-ও তেমন। যা-ই হোক, আসল কথায় ফিরে যাই। গিটহাব আর পেলিকান।  &lt;/p&gt;
+&lt;h1&gt;গিটহাব আর পেলিকান&lt;/h1&gt;
+&lt;p&gt;গিটহাবে নিজের ওপেন সোর্স প্রোজেক্ট শেয়ার করা ছাড়াও প্রোজেক্টের জন্য স্ট্যাটিক সাইট হোস্ট করা যায় অনায়াসে। গিটহাব পেজেসের মাধ্যমে নিজের ছোটখাট স্ট্যাটিক সাইট-ও এখানে হোস্ট করা যায়। অন্যদিকে নিজের হাতে ধরে ধরে একটা সাইট বানানো কিরকম পেড়ার তাও দেখার একটা বিষয়। সব দিক বিবেচনা করে গিটহাবের জন্য সাইট দাঁড় করানোর সবচেয়ে সহজ রাস্তা হল &lt;a href="jekyllrb.com"&gt;জেকিল&lt;/a&gt; বা &lt;a href="octopress.org"&gt;অক্টোপ্রেস&lt;/a&gt; এর মত কোন স্ট্যাটিক সাইট জেনারেটর ব্যবহার করা। আমি আবার নয়া পাইথনিস্তা, তাই হালকা খোঁজাখুঁজি করে পাইথন দিয়ে বানানো &lt;a href="getpelican.com"&gt;পেলিকান&lt;/a&gt; পেলান আর বসে পড়লাম আমার উবুন্টু ১৪.০৪-এ ইন্সটল করতে!&lt;/p&gt;
+&lt;h1&gt;গিট ইন্সটল করা&lt;/h1&gt;
+&lt;p&gt;ডেভেলপার হলে আপনার উবুন্টুতে গিট ইন্সটল করা থাকবেই, এটা নির্দ্বিধায় ধরে নেয়া যা। কিন্তু তারপরও যদি না থাকে তাহলে এভাবে ইন্সটল এবং কনফিগার করে নিন-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;global&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;USERNAME&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;global&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;email&lt;/span&gt; &lt;span class="n"&gt;USER&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;email&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;global&lt;/span&gt; &lt;span class="n"&gt;core&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;editor&lt;/span&gt; &lt;span class="n"&gt;vim&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;global&lt;/span&gt; &lt;span class="n"&gt;merge&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tool&lt;/span&gt; &lt;span class="n"&gt;vimdiff&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;ব্লগের গিট রেপো&lt;/h1&gt;
+&lt;p&gt;পার্সোনাল কাজে গিটহাব পেজেস ব্যবহার করতে সাধারণত &lt;code&gt;username.github.io&lt;/code&gt; ব্যবহার করা হয়। এজন্য আপনাকে যা করতে হবে তা হল, গিটহাবে লগইন করে আপনার ইউজারনেম সহ এরকম একটা রেপো &lt;a href="https://github.com/new"&gt;তৈরী&lt;/a&gt; করতে হবে-  &lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/git-repo-new.png" alt="git-repo-new" height=95% width=95% align=middle&gt;&lt;/p&gt;
+&lt;p&gt;রেপো ক্রিয়েট করার সময় Initialize this repository with a README তে টিক দিয়ে আপনার পছন্দের লাইসেন্স বাছাই করে নিন। তারপর পিসিতে ক্লোন করে ফেলুন-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/USERNAME/USERNAME.github.io.git blog/&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;পেলিকন ইন্সটল করা&lt;/h1&gt;
+&lt;p&gt;পেলিকান ইন্সটল করা আর দশটা পাইথন প্যাকেজ ইন্সটল করার মতই-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt; &lt;span class="n"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;import&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;পেলিকানের হাতে গোণা কিছু রিকোয়্যারমেন্ট আছে, যেমন &lt;code&gt;jinja2&lt;/code&gt;, &lt;code&gt;blinker&lt;/code&gt;, &lt;code&gt;pygments&lt;/code&gt;, &lt;code&gt;docutils&lt;/code&gt;, &lt;code&gt;python-dateutil&lt;/code&gt;, &lt;code&gt;pytz&lt;/code&gt;, &lt;code&gt;six&lt;/code&gt;, &lt;code&gt;feedgenerator&lt;/code&gt;, &lt;code&gt;unidecode&lt;/code&gt;. এগুলো অবশ্য আলাদাভাবে ইন্সটল করার প্রয়োজন নেই। পেলিকানের পোস্টগুলো ফরমেট করতে reStructuredText সিন্ট্যাক্স ব্যবহার করতে পারেন, এটা &lt;code&gt;docutils&lt;/code&gt; এর সাথেই ইন্সটল হয়ে যায়। আমি মার্কডাউনটেক্স ভালু পাই দেখে সেটা ইন্সটল করছি। আর ghp-import প্রয়োজন এক কমান্ড দিয়েই টার্মিনাল থেকে নতুন লেখা পোস্ট করার জন্য।&lt;/p&gt;
+&lt;p&gt;পেলিকান ইন্সটল হতে কোন ধরণের কম্পাইলেশন এরর দেখালে python-dev প্যাকেজটা ইন্সটল করে নিলেই হবে-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;পেলিকান কনফিগার করা&lt;/h1&gt;
+&lt;h2&gt;প্রথম ব্লগ&lt;/h2&gt;
+&lt;p&gt;পেলিকান ইন্সটল হবার সময়ই &lt;code&gt;pelican-quickstart&lt;/code&gt; ও ইন্সটল হয়ে গিয়েছে। ইন্টারঅ্যাক্টিভ ভাবে ধাপে ধাপে নতুন সাইট কনফিগার করে ফেলুন এটা দিয়ে-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ratul&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;niharika&lt;/span&gt;&lt;span class="o"&gt;:~&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+&lt;span class="n"&gt;ratul&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;niharika&lt;/span&gt;&lt;span class="o"&gt;:~/&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;
+&lt;span class="n"&gt;Welcome&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt; &lt;span class="n"&gt;v3&lt;/span&gt;&lt;span class="mf"&gt;.4.0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+
+&lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;create&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;based&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+
+&lt;span class="n"&gt;Please&lt;/span&gt; &lt;span class="n"&gt;answer&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;following&lt;/span&gt; &lt;span class="n"&gt;questions&lt;/span&gt; &lt;span class="n"&gt;so&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt; &lt;span class="n"&gt;generate&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt;
+&lt;span class="n"&gt;needed&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="n"&gt;Pelican&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+
+
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Where&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;create&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;[.]&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;What&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="n"&gt;Ratul&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;Rants&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Who&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;author&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="n"&gt;Ratul&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;What&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="k"&gt;default&lt;/span&gt; &lt;span class="n"&gt;language&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;web&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;en&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;specify&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;URL&lt;/span&gt; &lt;span class="n"&gt;prefix&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;.,&lt;/span&gt; &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//example.com   (Y/n)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;What&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;URL&lt;/span&gt; &lt;span class="n"&gt;prefix&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;see&lt;/span&gt; &lt;span class="n"&gt;above&lt;/span&gt; &lt;span class="n"&gt;example&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;no&lt;/span&gt; &lt;span class="n"&gt;trailing&lt;/span&gt; &lt;span class="n"&gt;slash&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//mnzr.github.io&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;enable&lt;/span&gt; &lt;span class="n"&gt;article&lt;/span&gt; &lt;span class="n"&gt;pagination&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;How&lt;/span&gt; &lt;span class="n"&gt;many&lt;/span&gt; &lt;span class="n"&gt;articles&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;generate&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;Fabfile&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Makefile&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;automate&lt;/span&gt; &lt;span class="n"&gt;generation&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;publishing&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;an&lt;/span&gt; &lt;span class="k"&gt;auto&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;reload&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;simpleHTTP&lt;/span&gt; &lt;span class="n"&gt;script&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;assist&lt;/span&gt; &lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;theme&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt; &lt;span class="n"&gt;development&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;upload&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt; &lt;span class="n"&gt;using&lt;/span&gt; &lt;span class="n"&gt;FTP&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;upload&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt; &lt;span class="n"&gt;using&lt;/span&gt; &lt;span class="n"&gt;SSH&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;upload&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt; &lt;span class="n"&gt;using&lt;/span&gt; &lt;span class="n"&gt;Dropbox&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;upload&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt; &lt;span class="n"&gt;using&lt;/span&gt; &lt;span class="n"&gt;S3&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;upload&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt; &lt;span class="n"&gt;using&lt;/span&gt; &lt;span class="n"&gt;Rackspace&lt;/span&gt; &lt;span class="n"&gt;Cloud&lt;/span&gt; &lt;span class="n"&gt;Files&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Do&lt;/span&gt; &lt;span class="n"&gt;you&lt;/span&gt; &lt;span class="n"&gt;want&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;upload&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt; &lt;span class="n"&gt;using&lt;/span&gt; &lt;span class="n"&gt;GitHub&lt;/span&gt; &lt;span class="n"&gt;Pages&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Is&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;personal&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;
+&lt;span class="n"&gt;Done&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Your&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;project&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="n"&gt;available&lt;/span&gt; &lt;span class="n"&gt;at&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ratul&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;সাইটের মুল গঠন তৈরী হয়ে গিয়েছে এখন :) &lt;code&gt;tree&lt;/code&gt; দিয়ে দেখে নিলাম গঠনটা কিরম-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+&lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;
+&lt;span class="err"&gt;│&lt;/span&gt;   &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;pages&lt;/span&gt;
+&lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;
+&lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;develop_server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;
+&lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;fabfile&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;Makefile&lt;/span&gt;
+&lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;pelicanconf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;       &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Main&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;
+&lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;publishconf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;       &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Settings&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;use&lt;/span&gt; &lt;span class="n"&gt;when&lt;/span&gt; &lt;span class="n"&gt;ready&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;publish&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;চাইলে ডেভেলপমেন্ট সার্ভার চালিয়ে পরীক্ষা করে দেখতে পারেন-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;develop_server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;এই কমান্ড দিলে &lt;a href="http://localhost:8000/"&gt;&lt;code&gt;localhost:8000&lt;/code&gt;&lt;/a&gt; এই ঠিকানায় পাওয়া যাবে আপনার সাইট-&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/pelican-default-ratul.png" alt="Default Pelican blog" height=95% width=95% align=middle&gt;&lt;/p&gt;
+&lt;p&gt;বন্ধ করতে-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;develop_server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt; &lt;span class="n"&gt;stop&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;প্রথম পোস্ট&lt;/h2&gt;
+&lt;p&gt;মার্কডাউন দিয়ে লেখব পেলিকানের পোস্ট, আগেই বলে নিয়েছি। my-first-post.md নামে একটা ফাইলে নিচের লেখাগুলো ভরে রেখে দিন content ফোল্ডারে-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="n"&gt;First&lt;/span&gt; &lt;span class="n"&gt;Post&lt;/span&gt;
+&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;07&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;03&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;38&lt;/span&gt;
+&lt;span class="n"&gt;Modified&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;07&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;03&lt;/span&gt; &lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;53&lt;/span&gt;
+&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Rants&lt;/span&gt;
+&lt;span class="n"&gt;Tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;publishing&lt;/span&gt;
+&lt;span class="n"&gt;Slug&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;first&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;
+&lt;span class="n"&gt;Author&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Ratul&lt;/span&gt;
+&lt;span class="n"&gt;Summary&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="n"&gt;very&lt;/span&gt; &lt;span class="n"&gt;very&lt;/span&gt; &lt;span class="n"&gt;short&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;post&lt;/span&gt;
+
+&lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;my&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt; &lt;span class="n"&gt;Yay&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ডেভেলপমেন্ট সার্ভার চালু থাকলে লোকালহোস্টের ঠিকানায় দিগে দেখে আসুন আপনার প্রথম পোস্ট :D ফাইলের নাম আসলে আপনার যা ইচ্ছা দিতে পারেন, কিন্তু এক্সটেনশন &lt;code&gt;.md&lt;/code&gt;, &lt;code&gt;.markdown&lt;/code&gt;, &lt;code&gt;.mkd&lt;/code&gt;, বা &lt;code&gt;.mdown&lt;/code&gt; এর যে কোন একটা হতে হবে।  &lt;/p&gt;
+&lt;p&gt;আপনার পোস্টগুলো বিভিন্ন ক্যাটেগোরিতে ভাগ করে রাখতে &lt;code&gt;content&lt;/code&gt; ফোল্ডারে ক্যাটেগেরির নামে নতুন নতুন ফোল্ডার তৈরী করলেই চলবে। অন্য দিকে, &lt;code&gt;drafts&lt;/code&gt;, &lt;code&gt;images&lt;/code&gt; নামে ফোল্ডারগুলো তাদের নামের মতই কাজ করে। কনটেন্ট ফোল্ডারটা দেখতে এমন হতে পারে-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+&lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;drafts&lt;/span&gt;
+&lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;images&lt;/span&gt;
+&lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;pages&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;কুইকস্টার্টের সময় নিচের প্রশ্নের উত্তরে Y দিয়ে থাকলে বিশেষ সুবিধা হল, ডেভেলপমেন্ট সার্ভার চলা অবস্থায় content ফোল্ডারে যে কোন পরিবর্তনই output এ দেখতে পাবেন।&lt;/p&gt;
+&lt;h1&gt;গিটহাবে পুশ করা&lt;/h1&gt;
+&lt;p&gt;লেখালেখি হল, সেগুলো দিয়ে সাইট-ও তৈরী হল। এখন শুধু গিটহাবে পুশ করার পালা। আপনি যে ফোল্ডারে ব্লগটি তৈরী করেছেন(এক্ষেত্রে &lt;code&gt;~/blog&lt;/code&gt;) সেটার Makefile ব্যবহার করে আপনি অনায়াসে গিটে পুশ করতে পারবেন-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ratul&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;niharika&lt;/span&gt;&lt;span class="o"&gt;:~/&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;github&lt;/span&gt;
+&lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ratul&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ratul&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ratul&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;publishconf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="nl"&gt;Done:&lt;/span&gt; &lt;span class="n"&gt;Processed&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="n"&gt;article&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="n"&gt;draft&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="mf"&gt;0.58&lt;/span&gt; &lt;span class="n"&gt;seconds&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ratul&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;
+&lt;span class="n"&gt;Username&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com&amp;#39;: USERNAME&lt;/span&gt;
+&lt;span class="n"&gt;Password&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//USERNAME@github.com&amp;#39;:&lt;/span&gt;
+&lt;span class="n"&gt;Counting&lt;/span&gt; &lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;55&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Delta&lt;/span&gt; &lt;span class="n"&gt;compression&lt;/span&gt; &lt;span class="n"&gt;using&lt;/span&gt; &lt;span class="n"&gt;up&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="n"&gt;threads&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Compressing&lt;/span&gt; &lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Writing&lt;/span&gt; &lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mf"&gt;23.01&lt;/span&gt; &lt;span class="n"&gt;KiB&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="n"&gt;bytes&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Total&lt;/span&gt; &lt;span class="mi"&gt;31&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;delta&lt;/span&gt; &lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;reused&lt;/span&gt; &lt;span class="mi"&gt;27&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;delta&lt;/span&gt; &lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;To&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/mnzr/blog.git&lt;/span&gt;
+   &lt;span class="mf"&gt;45184f&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;..&lt;/span&gt;&lt;span class="n"&gt;f4194a2&lt;/span&gt;  &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;এতটুকু করলেই আপনার কাজ শেষ আপাতত :D আপনার গিটহাব পেজ, &lt;code&gt;http://USERNAME.github.io&lt;/code&gt; তে গিয়ে দেখেন আপনার নতুন  ব্লগ সাইট!  &lt;/p&gt;
+&lt;p&gt;*অল;পলন- অনেক লম্বা, পইড়া লাভ নাই&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Wed, 30 Jul 2014 01:08:00 +0600</pubDate><guid>tag:,2014-07-30:posts/2014/07/30/আসুন-পেলিকানের-মত-পাখা-মেলি/</guid><category>pelican</category><category>publishing</category><category>python</category></item><item><title>Mentoring Mozilla Contributors of EWU</title><link>/posts/2014/06/08/mentoring-mozilla-contributors-of-ewu/</link><description>&lt;p&gt;Last Thursday we went to East West University (EWU) to mentor the new
+contributors on how to get involved with Mozilla's cool projects. They
+recently had a MozAwareness Booth at their campus, so all of the
+participants were very eager to know all the tricks and tips! They were
+so hyped up after the sessions that some of them started contributing
+right away! Here is a part of the contributors:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Image" src="http://minhazratul.files.wordpress.com/2014/06/14167589987_cca612a967_b.jpg?w=650" /&gt;&lt;/p&gt;
+&lt;p&gt;We started out for EWU a bit late but got there right in time for the
+event. The lab booked for this event was already house full when we
+stepped into it :D Around 40 participants were present at the time. As a
+matter of fact, &lt;a href="http://ewubd.edu/~nawab/"&gt;Dr. Md. Nawab Yousuf Ali&lt;/a&gt;
+sir, Chairperson of the CSE department of EWU was there to welcome us
+with a short but resourceful speech.&lt;/p&gt;
+&lt;p&gt;[caption id="" align="alignnone" width="650"]&lt;img alt="Honorable Chairperson of
+CSE Department,
+EWU" src="http://minhazratul.files.wordpress.com/2014/06/10321042_680569675347387_7925741188415757030_o.jpg?w=650" /&gt;
+Honorable Chairperson of CSE Department, EWU[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id="" align="alignnone" width="650"]&lt;img alt="House
+full!" src="http://minhazratul.files.wordpress.com/2014/06/14355123161_9082cb58a0_b.jpg?w=650" /&gt;
+House full![/caption]&lt;/p&gt;
+&lt;p&gt;We started the Contributor Mentoring day with an introduction to
+Mozilla. The participants already had a gross idea of what Mozilla is
+and what philosophy drives us, but this introduction session cleared up
+lots of confusions like whether all Mozilla's projects are open source
+or not and stuff like this. This session was taken by me :D&lt;/p&gt;
+&lt;p&gt;[caption id="" align="alignnone" width="650"]&lt;img alt="Me, asking question
+instead of answering
+:3" src="http://minhazratul.files.wordpress.com/2014/06/14352464062_4fb627e883_b.jpg?w=650" /&gt;
+Me, asking question instead of answering :3[/caption]&lt;/p&gt;
+&lt;p&gt;After answering all the curious questions from the participants we gave
+them hands on tour of IRC, the mailing lists, different Facebook groups
+of Mozilla. Other than a little problem with IRC chat, they got through
+all these steps of getting connected to Mozilla Bangladesh.&lt;/p&gt;
+&lt;p&gt;It was Zarin who gave them idea of the Facebook groups and how to get
+help on these groups. The also talked about WoMoz and Webmaker. An
+interesting aspect was that many male and female participants were
+equally interested in WoMoz, which proves their willingness to promote
+women in the field of technology. Webmaker was another project that got
+lots of applause because of it's innovativeness.&lt;/p&gt;
+&lt;p&gt;[caption id="" align="alignnone" width="650"]&lt;img alt="Zarin talking about
+Webmaker" src="http://minhazratul.files.wordpress.com/2014/06/14378620113_ddeba227fe_b.jpg?w=650" /&gt;
+Zarin talking about Webmaker[/caption]&lt;/p&gt;
+&lt;p&gt;After Zarin, Iqram came up with MDN and SuMo. Many of the participants
+who work as web developers already knew about MDN so Iqram showed them
+how we localized almost all of the MDN in to Bangla. He also coverd
+SuMo, describing it as,"One stop helpline for Mozillians."&lt;/p&gt;
+&lt;p&gt;[caption id="" align="alignnone" width="650"]&lt;img alt="Iqram explaining the
+importance of
+MDN" src="http://minhazratul.files.wordpress.com/2014/06/14354014285_86c066f0bf_b.jpg?w=650" /&gt;
+Iqram explaining the importance of MDN[/caption]&lt;/p&gt;
+&lt;p&gt;After we finished guiding the participants through all the communication
+channels, there was a question and answer session conducted by Iqram.
+Whatever confusion they new Mozillians had was wiped clean, thanks to
+him! :D&lt;/p&gt;
+&lt;p&gt;Finally, we gave the participants stickers and other swags. For all
+their effort and work we gave lanyards to the volunteers and a Firefox
+T-shirt to &lt;a href="https://mozillians.org/en-US/u/smamir.tuhin/"&gt;Sayed Mohammad
+Amir&lt;/a&gt;, the club lead of
+Firefox@EWU club.&lt;/p&gt;
+&lt;p&gt;[caption id="" align="alignnone" width="650"]&lt;img alt="Firefox@EWU's Club Lead
+Amir" src="http://minhazratul.files.wordpress.com/2014/06/14331010916_3a28f556cc_b.jpg?w=650" /&gt;
+Firefox@EWU's Club Lead Amir[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id="" align="alignnone" width="650"]&lt;img alt="Fahmida, an WoMoz from
+EWU" src="http://minhazratul.files.wordpress.com/2014/06/14167506879_257eb5169f_b.jpg?w=650" /&gt;
+Fahmida, an WoMoz from EWU[/caption]&lt;/p&gt;
+&lt;p&gt;The event was a total success, and it ended with a few group photos and
+selfies :D&lt;/p&gt;
+&lt;p&gt;[gallery type="rectangular" link="none" ids="1620,1619,1617"]&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://maruffislamm.wordpress.com/2014/06/06/মজিলা-কন্ট্রিবিউটর-মেন্ট/"&gt;Here&lt;/a&gt;
+is another blog post by Maruf Islam about the event(Bangla). He is an
+active Firefox Student Ambassador from EWU who likes to talk about
+Firefox OS.&lt;/p&gt;
+&lt;p&gt;Photos:&lt;/p&gt;
+&lt;p&gt;[1]
+&lt;a href="https://www.flickr.com/photos/124415049@N04/sets/72157644618326097/"&gt;https://www.flickr.com/photos/124415049@N04/sets/72157644618326097/&lt;/a&gt;&lt;br /&gt;
+[2]
+&lt;a href="https://www.flickr.com/photos/smamir_tuhin/sets/72157644626937020/"&gt;https://www.flickr.com/photos/smamir_tuhin/sets/72157644626937020/&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Sun, 08 Jun 2014 01:41:00 +0600</pubDate><guid>tag:,2014-06-08:posts/2014/06/08/mentoring-mozilla-contributors-of-ewu/</guid><category>mentoring</category></item><item><title>প্রথম প্রেমে মরে যাওয়ার গান - চিরকুট</title><link>/posts/2014/04/12/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A5%E0%A6%AE-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A7%87%E0%A6%AE%E0%A7%87-%E0%A6%AE%E0%A6%B0%E0%A7%87-%E0%A6%AF%E0%A6%BE%E0%A6%93%E0%A7%9F%E0%A6%BE%E0%A6%B0-%E0%A6%97%E0%A6%BE%E0%A6%A8/</link><description>&lt;iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/109378235&amp;amp;color=000000&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false"&gt;&lt;/iframe&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;"একটু তোমায় নিলাম আমি&lt;br /&gt;
+ এক চিমটি মেঘে থামি&lt;br /&gt;
+ জলের ছিটেয় নিলেম পাগলামি&lt;br /&gt;
+ একটু তুমি বুকের ভিতর&lt;br /&gt;
+ বেপরোয়া শ্রাবণ ভাদর&lt;br /&gt;
+ ভাসাও ডোবাও তোমার-ই আমি।  &lt;/p&gt;
+&lt;p&gt;মরে যাবো রে মরে যাবো,&lt;br /&gt;
+ কি অসহায় আমি, একবার ভাবো।&lt;/p&gt;
+&lt;p&gt;তোমাকে ছেড়ে যাবো কোথায়?&lt;br /&gt;
+ তোমাকে ছেড়ে কি বাঁচা যায় ?&lt;br /&gt;
+ মেঘের-ই ওই নীলে তুমি জীবন দিলে,&lt;br /&gt;
+ এ বড় সুন্দর জ্বালায় আমায়&lt;br /&gt;
+ মেঘের-ই ওই নীলে তুমি জীবন দিলে,&lt;br /&gt;
+ এ বড় নির্মম পোড়ায় আমায়!&lt;/p&gt;
+&lt;p&gt;একটু রাত ডুবে আসে&lt;br /&gt;
+ একটু আলো নীভে আসে&lt;br /&gt;
+ তুমি দূরে একা লাগে&lt;br /&gt;
+ মধুর ওই চাঁদটাকে&lt;br /&gt;
+ অ্যালুমিনিয়াম লাগে&lt;br /&gt;
+ হাঁটি আমি চাঁদ ও হাঁটে।&lt;/p&gt;
+&lt;p&gt;মরে যাবো রে মরে যাবো,&lt;br /&gt;
+ কি অসহায় আমি, একবার ভাবো।&lt;/p&gt;
+&lt;p&gt;ভালো লাগে না, লাগে না রে&lt;br /&gt;
+ বাঁচাবে আজ বলো কে আমারে?&lt;br /&gt;
+ বুঝিনা, জানিনা মেনেও মানিনা,&lt;br /&gt;
+ সে ছাড়া নেই আমি ঘোর আঁধারে,&lt;br /&gt;
+ এপারে ওপারে খুঁজি যে তাহারে&lt;br /&gt;
+ সে ছাড়া নেই আমি, চাই তাহারে।&lt;/p&gt;
+&lt;p&gt;একটু তোমায় নিলাম আমি&lt;br /&gt;
+ এক চিমটি মেঘে থামি&lt;br /&gt;
+ জলের ছিটেয় নিলেম পাগলামি&lt;br /&gt;
+ একটু তুমি বুকের ভিতর&lt;br /&gt;
+ বেপরোয়া শ্রাবণ ভাদর&lt;br /&gt;
+ ভাসাও ডোবাও তোমার-ই আমি।"  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;-চিরকুট&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Sat, 12 Apr 2014 12:17:00 +0600</pubDate><guid>tag:,2014-04-12:posts/2014/04/12/প্রথম-প্রেমে-মরে-যাওয়ার-গান/</guid><category>songs</category></item><item><title>মোজিলিয়ানদের আলাপচারিতা: IRC style</title><link>/posts/2013/11/23/%E0%A6%AE%E0%A7%8B%E0%A6%9C%E0%A6%BF%E0%A6%B2%E0%A6%BF%E0%A7%9F%E0%A6%BE%E0%A6%A8%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%AA%E0%A6%9A%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A6%A4%E0%A6%BE-IRC/</link><description>&lt;p&gt;(মোজিলার উইকিতে IRC সম্পর্কিত পাতাটির অনুসরণে লেখা। IRC-এর ব্যবহার ও
+প্রয়োগ বিস্তর বিধায় এই পোস্টটি শুধু অতি প্রয়োজনীয় কিছু ধাপে লেখা হল।
+পরবর্তিতে আরও ধাপ এবং তথ্য যোগ করা হবে।)&lt;/p&gt;
+&lt;p&gt;নতুন মোজিলিয়ানদের প্রায়ই দেখা যায় IRC নিয়ে সমস্যায় পড়তে। IRC তেমন কঠিন
+কিছু না একেবারেই, তারপরও এই আধুনিক যুগে ফেসবুক আর হোয়াটসঅ্যাপের মত সহজ
+চ্যাট অ্যাপগুলো ব্যবহারে অভ্যস্ত মোজিলিয়ানদের এর সাথে পরিচিত হতে একটু
+বেগ পেতে হয় :P ভয় নেই, এই পোস্টটি আগা-টু-গোড়া পড়ে ফেললেই আপনি বাকিসব
+মোজিলিয়ানদের মত IRC তে বকর-বকর করা শিখে যাবেন :D&lt;/p&gt;
+&lt;p&gt;প্রযুক্তিগত দিক দিয়ে IRC বা Internet Relay Chat আসলেই অনেক পুরানো (১৯৮৮
+সালে প্রচলন এর)। এটা এতটাই পুরানো যে WWW বা World Wide Web এর উদ্ভব-ও এর
+আগে হয় নি! প্রযুক্তিগত দিক দিয়ে এটা একটি ইন্টারনেট প্রোটোকল যার সাহায্যে
+একসাথে অগণিত মানুষের সাথে কথা বলা যায়। IRC তে কথা বলার জন্য প্রথমে কোন
+IRC ক্লায়েন্ট দিয়ে পছন্দের IRC নেটওয়ার্কে সংযুক্ত হতে হয়। তারপর ইচ্ছে মত
+সে সার্ভারের কোন চ্যাট "রুমে" ঢুকে রুমের সদস্যদের সাথে জমিয়ে গল্প করা
+যায়। রুমগুলোয় কিছু অপারেটর বা মডারেটর থাকেন যাঁদের কাজ অনেকটা ফেসবুকের
+গ্রুপগুলোর অ্যাডমিনদের মত। অবশ্য কিছু রুম থাকে যেগুলোর দরজা বন্ধ, মানে
+পাসওয়ার্ড দেয়া, কিন্তু সেগুলো নিতান্তই ব্যক্তিগত আলাপের জন্য :)&lt;/p&gt;
+&lt;p&gt;এখন আপনি জেনে গেছেন IRC আসলে কি। IRC তে সংযুক্ত হওয়া যায় অনেক ভাবেই, এমন
+কি কোন সফটয়্যার ইন্সটল করা ছাড়াই আপনি ওয়েব সাইট থেকে যে কোন IRC server এ
+চ্যাট করতে পারবেন। কিন্তু সব সুযোগ সুবিধা মিলিয়ে আমরা ফায়ারফক্সেরি একটা
+অ্যাড অন ব্যবহার করি চ্যাট করতে। তাহলে এখন মোজিলিয়ানদের সাথে আলাপ করতে
+যাওয়া যাক :D&lt;/p&gt;
+&lt;h1&gt;১. চ্যাট ক্লায়েন্ট: Chatzilla&lt;/h1&gt;
+&lt;p&gt;আপনি যে কোন চ্যাট ক্লায়েন্ট ব্যবহার করতে পারেন, কিন্তু নতুন ব্যবহারকারী
+হবার কারণে এত অপশন দিয়ে আপনাকে কনফিউজড করতে চাই না। একজন মোজিলিয়ান
+হিসেবে IRC চ্যাটের জন্য আপনার সবচেয়ে সহজ উপায় হল Chatzilla. ফায়ারফক্স
+ব্রাউজারে এই অ্যাড-অনটা ইন্সটল করে নিলেই চলে, তারপর মোটামুটি সব IRC
+নেটওয়ার্কেই চ্যাট করতে পারবেন আপনি :D&lt;/p&gt;
+&lt;p&gt;ফায়ারফক্সের চ্যাটজিলা যোগ করতে ফায়ারফক্স মেনু থেকে Add-ons এ যান বা Ctrl
++ Shift + A চাপুন। যে পাতাটি আসবে তার Get add-ons ট্যাব থেকে Chatzilla
+সার্চ করে ইন্সটল করে নিন। ব্যস, কোন ঝামেলা ছাড়াই একটা চ্যাট ক্লায়েন্ট
+যোগাড় হয়ে গেল! Firerox মেনুতে (অথবা Tools মেনুতে) Chatzilla লেখায় ক্লিক
+করলেই চ্যাটজিলা চালু হয়ে যাবে।&lt;/p&gt;
+&lt;h1&gt;২. মোজিলিয়ান তোমার নাম কি, নিকে পরিচয়&lt;/h1&gt;
+&lt;p&gt;নিক(nick) বা ডাকনাম বলতে বুঝায় আপনি যে নাম নিয়ে চ্যাট করবেন তা। চালু হয়ে
+যাবার সাথে সাথেই চ্যাটজিলা আপনার জন্য একটা সম্ভাব্য নিক ঠিক করে দেয়। এ
+নামটি সাধারণত আপনার কম্পিউটারে আপনার ইউজারনেমটি-ই হয়ে থাকে। আপনি চাইলে
+অন্য কোন নাম নিতে পারেন খুব সহজে:&lt;/p&gt;
+&lt;p&gt;ক.  চ্যাটজিলা উইন্ডোর বাম পাশে নিচের দিকে আপনার নামে ক্লিক করে এবং তারপর
+Change nickname  থেকে&lt;/p&gt;
+&lt;p&gt;খ. অথবা এরকমভাবে কমান্ড দিয়ে:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;/nick nickname&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;নাম পাল্টানোর পর মেসেজ বক্সে এ ব্যাপারে মেসেজ দেখতে পাবেন।&lt;/p&gt;
+&lt;h1&gt;৩. মোজিলার চ্যাট সার্ভারে যুক্ত হওয়া&lt;/h1&gt;
+&lt;p&gt;মাত্র তো চ্যাটজিলা চালু করা হল এবং নিক নেম একটা ঠিক করা হল। এখনও আসল
+কাজটাই বাকি: মোজিলার চ্যাট সার্ভারের সাথে যুক্ত হওয়া। চ্যাটজিলার জন্য এ
+কাজটা খুবই খুবই সহজ। চ্যাটজিলা চালু করলে খেয়াল করে দেখবেন মেসেজ বক্সে
+অনেক মেসেজ আসার পর সবশেষে এরকম কিছু লেখা থাকে: "[INFO] Available
+networks are..." এ লিস্টের moznet-ই হল মোজিলার চ্যাট সার্ভার। এই নামটিতে
+ক্লিক করলে সার্ভারের কিছু ডিফল্ট মেসেজ দেখাবে এবং এর পর আপনি যে কোন
+চ্যাট রুমে ঢুকতে পারবেন!&lt;/p&gt;
+&lt;p&gt;নিক রেজিস্টার করার খুব একটা প্রয়োজন নেই যদি আপনার নিকটি ইউনিজ হয়ে থাকে
+:P কিন্তু তারপরও নিক রেজিস্টারের পদ্ধতি এখানে সংযুক্ত করা হবে পরবর্তীতে।&lt;/p&gt;
+&lt;h1&gt;৪. দরজা-জানালা ছাড়া রুম?&lt;/h1&gt;
+&lt;p&gt;একেকটা চ্যাট সার্ভারে হাজারো chat room থাকে। মোজনেটে প্রায় নয়শ'টির মত
+চ্যাটরুম আছে। এই একেকটি রুমে স্থানীয় কমিউনিটির আলোচনা থেকে শুরু করে
+পরবর্তি ফায়ারফক্স ব্রাউজার কেমন হবে তার আলোচনা থেকে দুপুরের খাবারের পর
+হালকা আড্ডা দেয়ার মত সব ধরণের আলাপই হয়ে থাকে। জনপ্রিয় চ্যাটরুমগুলোর
+মধ্যে আছে #newbies, #introduction, #mozillians ইত্যাদি।&lt;/p&gt;
+&lt;p&gt;মোজিলা বাংলাদেশের আলাপ হয় #bangladesh রুমটিতে এতে যোগ দিতে লেখার ঘরে এই
+কমান্ড লিখে এন্টার দিন:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;/join #bangladesh&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;আপনি চাইলে # এর পর যে কোন নামই দিতে পারেন, দিলে সে নামে কোন একটি
+চ্যাটরুমে আপনাকে সংযুক্ত করে দেয়া হবে। এই নামে কোন রুম না থাকলে নতুন
+একটা রুমও তৈরী হতে পারে এবং সেটিতেও অন্যান্যসব রুমের মত কথা বলা যাবে।&lt;/p&gt;
+&lt;p&gt;আজকেই তাহলে বসে যান চ্যাটজিলা নিয়ে :D বাংলাদেশের চ্যাটরুমে গিয়ে hello
+বলে আসুন!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Sat, 23 Nov 2013 01:13:00 +0600</pubDate><guid>tag:,2013-11-23:posts/2013/11/23/মোজিলিয়ানদের-আলাপচারিতা-IRC/</guid><category>how-to</category></item><item><title>How to have a Mozilla event at your university</title><link>/posts/2013/11/22/mozilla-event-at-your-university/</link><description>&lt;p&gt;So you have got selected for &lt;a href="http://minhazratul.wordpress.com/2013/06/09/become-firefox-student-ambassador/" title="Be a Firefox Student Ambassador (Bangla)"&gt;Firefox Student Ambassadors
+program&lt;/a&gt;?
+And already opened a Firefox club at your very own campus? :D Yay!
+Congratulations! Now the real work begins :D&lt;/p&gt;
+&lt;p&gt;As a beginner, you, the Firefox Club, can organize a number of events
+that don’t require extensive experience at event management. One of
+them, and my personal favorite is the
+&lt;a href="http://minhazratul.wordpress.com/2013/09/27/intro-to-web-a-webmaker-event-at-aiub/" title="Intro to Web – A Webmaker event at AIUB"&gt;Webmaker&lt;/a&gt;.
+Search it on the web and Mozilla’s wiki for more information.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;STEP 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After establishing your Club and discussing the type of event with your
+fellow Ambassadors, the first thing you need to do is let your local
+Mozilla community (Mozilla Bangladesh in this case) know your
+intentions. You can ask for suggestions and advices in our Facebook
+groups: &lt;a href="https://www.facebook.com/groups/MozillaBD/" title="Mozilla Bangladesh"&gt;Mozilla
+Bangladesh&lt;/a&gt;
+and &lt;a href="https://www.facebook.com/groups/fsabd/" title="Firefox Student Ambassadors, Bangladesh"&gt;Firefox Student Ambassadors,
+Bangladesh&lt;/a&gt;.
+When you have got a clear view of  the plan, send an email to the local
+Mozilla community’s mailing list
+(&lt;a href="https://lists.mozilla.org/listinfo/community-bangladesh" title=" community-bangladesh Info Page"&gt;community-bangladesh&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;STEP 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;By now you have got okay sign from community members, plus one or more
+&lt;a href="https://wiki.mozilla.org/ReMo" title="ReMo - MozillaWiki"&gt;ReMo&lt;/a&gt; are ready to
+help your out :D Good job. I take that you explained every part of your
+plan and adjusted it as other Mozillians suggested. Now you need to find
+someone at your university who can get you the permission from authority
+to arrange the event. You can go to-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The Office of Student Affairs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;President of your university’s IT related club&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A super-enthusiastic faculty&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Explain your plan to them too. They too would have some suggestion and
+advice, revise your plan accordingly.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;STEP 3:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You have let both the ends know about what you want to do. Now it is
+time to get official. You need to send a proposal letter through email
+or as a printed copy (ask your contact which is better) to your
+university authority. It might be the Head of the Department, an
+Executive Officer at Office of Student Affairs, or a Faculty in charge
+of these activities. You can find a demo proposal letter from asking at
+Mozilla Bangladesh communication channels. Ask on the mailing list
+thread about any confusion. Add the necessary details to your proposal
+letter:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Topic of the event&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Duration and date&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Speakers and sessions&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Target audience and estimated participants&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Necessary resources- auditorium, projector, speaker etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Advertisement- booths, banners and posters.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You are all set to send the letter :)&lt;/p&gt;
+&lt;p&gt;Note: Try to fix a date for the event after at least 6 weeks from the
+confirmation of your proposal. In that way we can ensure swags and have
+plenty of time to plan in details.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;STEP 4:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You have all sorts of permissions for your activities. It is high time
+you had planned the details. Get a few experienced Mozillians to help
+you out in this. They might also be the ones taking sessions in this
+event, or they can suggest who can. You need to-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Fix segments for the sessions and gap between them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Decide how to distribute swags&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Always have plan B, C, even D in case of emergency&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select some of your finest as volunteers/facilitator&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A photographer friend or someone from the Photography Club for
+    awesome photo memories&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;STEP 5:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;It's time for the event :D Check if everything is okay a day before the
+event. Remember to-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Check your task list/planning page&lt;/li&gt;
+&lt;li&gt;Keep the next speaker and their instruments ready&lt;/li&gt;
+&lt;li&gt;Put the volunteers on the move so that they can help the
+    participants&lt;/li&gt;
+&lt;li&gt;Distribute swags carefully&lt;/li&gt;
+&lt;li&gt;Be careful with food (if you plan to give refreshments)&lt;/li&gt;
+&lt;li&gt;Take lots and lots of photos&lt;/li&gt;
+&lt;li&gt;And have tons of fun :D&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;STEP 6:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I hope the event was a success :D Congratulations you and your awesome
+mates! Not time to sit back yet :P You have to share your amazing
+experience with us!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Post on Facebook/Google+/Twitter with the FSA page attached with it&lt;/li&gt;
+&lt;li&gt;Write a blog post :D with the great photos!&lt;/li&gt;
+&lt;li&gt;Upload the photos to the Mozilla Bangladesh Flickr group&lt;/li&gt;
+&lt;li&gt;Email all the links to the mailing list thread!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Aaaaaand you are done! Hope to see more and more events :D&lt;/p&gt;
+&lt;p&gt;Thanks to my buddy another Mozillian
+&lt;a href="http://tanhaislampinkdevil.wordpress.com/"&gt;Tanha&lt;/a&gt; for reminding me to
+write a step by step guide :) True that not every event will follow
+these steps, but it will help to get some idea of where to start.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Fri, 22 Nov 2013 16:44:00 +0600</pubDate><guid>tag:,2013-11-22:posts/2013/11/22/mozilla-event-at-your-university/</guid><category>how-to</category></item><item><title>শুভ নবম জন্মদিন প্রিয় ফায়ারফক্স!</title><link>/posts/2013/11/09/%E0%A6%B6%E0%A7%81%E0%A6%AD-%E0%A7%AF%E0%A6%AE-%E0%A6%9C%E0%A6%A8%E0%A7%8D%E0%A6%AE%E0%A6%A6%E0%A6%BF%E0%A6%A8-%E0%A6%AB%E0%A6%BE%E0%A7%9F%E0%A6%BE%E0%A6%B0%E0%A6%AB%E0%A6%95%E0%A7%8D%E0%A6%B8/</link><description>&lt;p&gt;করতে আমরা অধীর। এই উদযাপনের অংশ হিসেবে আমরা বিগত বছরগুলোয় ওয়েবকে যেসব উপহার দিতে পেরেছি সেগুলো তুলে ধরতে চাই।&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://blog.mozilla.org/blog/2013/11/07/happy-ninth-birthday-firefox/"&gt;মূল&lt;/a&gt; লেখা থেকে কিয়দাংশ পরিবর্তিত।&lt;/p&gt;
+&lt;p&gt;এমন একটি ব্রাউজার যা হবে অবাক করা দ্রুত গতির, নিরাপদ ও মজার, এবং একই সাথে অনলাইনে মুক্ত-চর্চা, নতুনত্ব এবং সুযোগ তৈরি করাকে তুলে ধরবে- এমনই ভাবনা থেকে মোজিলা আজ(৭ নভেম্বর, ২০১৩) থেকে প্রায় নয় বছর আগে ফায়ারফক্স ব্রাউজার সৃষ্টি করে। ফায়ারফক্স প্রকাশ করার পর এই নয় বছরে আমরা ওয়েবকে এ যুগের সবচেয়ে মূল্যবান জনসম্পদে পরিণত করেছি এবং আকার দিয়েছি।&lt;/p&gt;
+&lt;p&gt;আজ ৯ নভেম্বরে সারা পৃথিবীর মোজিলিয়ানদের কমিউনিটির সাথে ফায়ারফক্সের সুবর্ণ নবম জন্মদিন উদযাপন করতে আমরা অধীর। এই উদযাপনের অংশ হিসেবে আমরা বিগত বছরগুলোয় ওয়েবকে যেসব উপহার দিতে পেরেছি সেগুলো তুলে ধরতে চাই।&lt;/p&gt;
+&lt;p&gt;&lt;img alt="শুভ জন্মদিন ফায়ারফক্স!" src="../images/HBDFx.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;মোবাইলে ফায়ারফক্স&lt;/strong&gt;: ফায়ারফক্স সবসময়ই ওয়েবের ওপর উল্লেখযোগ্য প্রভাব ফেলে এসেছে এবং আমরা সম্প্রতি ফায়ারফক্সকে শুধু উইন্ডোজ, ম্যাক এবং লিনাক্সের জন্যই না বরং অ্যানড্রয়েড ফোন এবং ট্যাবলেটগুলোয় সাপোর্ট বর্ধিত করেছি। আগের তুলনায় প্রতিদিনই আরও অনেক মানুষ মোবাইল ডিভাইসগুলো দিয়ে ওয়েবে প্রবেশ করছে, তাই অ্যান্ড্রয়েডের জন্য আমাদের ফায়ারফক্স ব্রাউজার বরাবরের মত বিস্ময়কর ব্রাউজ করার অভিজ্ঞতা প্রদান করছে চলেছে। ফলস্রুতিতে গুগল প্লে স্টোরে এটি ৪.৫ তারকা পায় এবং কয়েক লাখের-ও বেশিবার ডাউনলোড হয়।&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ফায়ারফক্স পরিবার বড় করে তোলা&lt;/strong&gt;: &lt;a href="https://blog.mozilla.org/blog/2013/07/01/mozilla-and-partners-prepare-to-launch-first-firefox-os-smartphones/"&gt;ফায়ারফক্স ওএস স্মার্টফোনের এর জন্ম এবং সর্বপ্রথম প্রকাশে&lt;/a&gt;র মাধ্যমে আমরা এ বছর ফায়ারফক্স পরিবারকে আরেকটু বড় করে তুলেছি- সম্পূর্ণই মুক্ত ওয়েব প্রযুক্তিগুলোর ওপর ভিত্তি করে তৈরি এসব ডিভাইস। আজ পর্যন্ত &lt;a href="https://blog.mozilla.org/blog/2013/10/31/telefonica-launches-firefox-os-smartphones-in-mexico-peru-and-uruguay/"&gt;ন’টি দেশে ফায়ারফক্স ওএস প্রকাশিত হয়েছে&lt;/a&gt; এবং আমাদের মার্কেটপ্লেসে হাজারো অ্যাপস রয়েছে।&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;গতিশীল&lt;/strong&gt;: ফায়ারফক্স আগের যে কোন সময় থেকে এখন আরও গতিশীল। গত বছরের ক্রাকেন(Kraken) ফলাফলকে আমরা ৭৪% ছাড়িয়ে গিয়েছি, এবং অকটেন(Octane)-এ আমরা ৮৮% বেশি গতিশীল। জাভাস্ক্রিপ্টের উন্নতি ও asm.js নামে নতুন প্রযুক্তির কারণে এখন ওয়েব অ্যাপ এবং গেমগুলো ২৫% দ্রুততর। এবং, প্রথমবার চালুর সময়, পৃষ্ঠা লোড হবার সংখ্যা এবং নির্ভরযোগ্যতার কারণে সম্প্রতি টম’স হার্ডওয়্যার(Tom’s Hardware) ফায়ারফক্সকে "&lt;a href="http://www.tomshardware.com/reviews/chrome-27-firefox-21-opera-next,3534-12.html"&gt;গতির নতুন রাজা&lt;/a&gt;" হিসেবে ভূষিত করেছে এবং ওয়েব ব্রাউজার গ্রান্ড প্রী’র(Web Browser Grand Prix) বিজয়ীতা ঘোষণা করেছে।&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;সামাজিক&lt;/strong&gt;: দ্রুত এবং সহজে আপনার বন্ধু এবং পরিবারের সাথে আপনি যাতে সংযুক্ত হতে পারেন সেজন্য ফায়ারফক্সে সরাসরি সোশাল সাইট ও সার্ভিসগুলো ইন্টিগ্রেট করা নিয়ে কাজ করছি আমরা। প্রথম সোশাল ইন্টিগ্রেশন সঙ্গী হিসেবে গত বছর &lt;a href="https://blog.mozilla.org/blog/2012/12/03/firefox-gets-social-w-facebook/"&gt;ফেসবুককে সাথে নিয়ে&lt;/a&gt; আমরা প্রকাশ করেছি। তার পরপরই Cliqz ও Mixi-ও সংযুক্ত করা হয় এবং আপনার ব্রাউজিং অভিজ্ঞতাকে আরও সামাজিক, পরিবর্তনযোগ্য এবং ব্যক্তিগত করতে আরও সোশাল সাইট, সার্ভিস ও অ্যাপ নিয়ে কাজ চলছে।&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ব্যক্তিগত&lt;/strong&gt;: আমরা গর্বিত যে Ponemon Institute-র ২০১২ সালের একটি &lt;a href="http://www.ponemon.org/local/upload/file/2012%20MTC%20Report%20FINAL.pdf"&gt;সমীক্ষার&lt;/a&gt; ফল অনুসারে আমরা প্রাইভেসি বা &lt;a href="https://blog.mozilla.org/blog/2013/01/28/privacy-day-2013/"&gt;ব্যক্তিস্বাধীণতার জন্য সবচেয়ে বিশ্বাসযোগ্য কোম্পানি&lt;/a&gt;। মাত্র ক’দিন আগেই আমরা &lt;a href="https://blog.mozilla.org/blog/2013/10/25/lightbeam-for-firefox-privacy-education-for-users-open-data-for-publishers/"&gt;লাইটবিম&lt;/a&gt; ফায়ারফক্স অ্যাড-অন প্রকাশ করেছি যা ওয়েবে প্রথম এবং তৃতীয় পক্ষ(third party) কোম্পানিগুলোর সাথে মানুষের ইন্টারঅ্যাকশনকে তুলে ধরে।&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;নিরাপদ&lt;/strong&gt;: আপনি যেখানেই ওয়েব সার্ফ করেন না কেন আপনাকে নিরাপদ রাখতে ফায়ারফক্সের সাথে &lt;a href="https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/"&gt;মিশ্র কন্টেন্ট ব্লকার&lt;/a&gt; দিয়ে দিয়েছি আমরা। &lt;a href="https://blog.mozilla.org/futurereleases/2013/09/24/plugin-activation-in-firefox/"&gt;ক্লিক করলেই চলবে&lt;/a&gt;-এমন প্লাগিন ফায়ারফক্সের অন্তর্ভূক্ত। কোন কোন সাইট এসব প্লাগিন ব্যবহার করতে পারবে তার সিদ্ধান্ত আপনাকেই নিতে দেয়ার মাধ্যমে ফায়ারফক্স আপনাকে রক্ষা করতে সহায়তা করবে এবং আপনার ব্রাউজারকে স্বচ্ছন্দে চলতে দিবে।&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;সেরা ডেভেলপার টুল&lt;/strong&gt;: ডেস্কটপ ও মোবাইলে HTML, CSS এবং Javascript এডিট ও ডিবাগ করতে ওয়েব ডেভেলপারদের জন্য &lt;a href="https://developer.mozilla.org/en-US/docs/Tools"&gt;এক সেট শক্তিশালী টুলস&lt;/a&gt; হল ফায়ারফক্সের গর্বের কারণ। এগুলোর মধ্যে উল্লেখযোগ্য হল: &lt;a href="https://hacks.mozilla.org/2013/10/introducing-the-firefox-os-app-manager/"&gt;অ্যাপ ম্যানেজার&lt;/a&gt;; &lt;a href="https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_View"&gt;রেস্পনসিভ ডিজাইন ভিউ&lt;/a&gt;, &lt;a href="https://hacks.mozilla.org/2013/06/network-monitor-now-in-firefox-beta/"&gt;নেটওয়ার্ক মনিটর&lt;/a&gt;; &lt;a href="https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector"&gt;পেজ ইন্সপেক্টর&lt;/a&gt;; এবং &lt;a href="https://developer.mozilla.org/docs/Tools/Debugger"&gt;জাভাস্ক্রিপ্ট ডিবাগার&lt;/a&gt;।&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ওয়েবআরটিসি&lt;/strong&gt;: কোন থার্ড-পার্টি সফটয়্যার বা প্লাগিন ছাড়াই ওয়েব &lt;a href="https://blog.mozilla.org/blog/2013/06/25/firefox-delivers-3d-gaming-video-calls-and-file-sharing-to-the-web/"&gt;রিয়াল টাইম কমিউনিকেশনসে&lt;/a&gt;র মাধ্যমে ফায়ারফক্স ব্রাউজারের ভেতর থেকেই ভিডিও কল এবং ফাইল-শেয়ারিংয়ের সুযোগ করে দেয়।&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ওয়েব গেমিংয়ে নতুনত্ব&lt;/strong&gt;: ওয়েব যে সত্যিকার অর্থেই একটি ডেভেলপমেন্ট প্লাটফর্ম সেটা প্রমাণ করতে পুরো গত বছর আমাদের ডেভেলপার এবং ইঞ্জিনিয়াররা ওয়েবকে &lt;a href="https://blog.mozilla.org/blog/2013/03/27/mozilla-is-unlocking-the-power-of-the-web-as-a-platform-for-gaming/"&gt;হাই এন্ড গেম ডেভেলপমেন্ট প্লাটফর্ম&lt;/a&gt; বানাতে নিরলশ পরিশ্রম করে গিয়েছেন। &lt;a href="https://blog.mozilla.org/mbest/2013/06/25/asm-js-its-really-fast-backwards-compatible-and-now-in-the-release-version-of-firefox/"&gt;asm.js&lt;/a&gt; নামে জাভাস্ক্রিপ্টের শক্তিশালী একটি সাবসেট তৈরি করেছি আমরা যা ডেভেলপারদের সরাসরি ওয়েবেই হাই-ইন্টেনসিটি সমৃদ্ধ অ্যাপ্লিকেশন যেমন গেম নির্মাণ করার সুযোগ করে দেয়। ফায়ারফক্সে &lt;a href="https://blog.mozilla.org/blog/2013/10/29/listen-up-web-audio-api-now-in-firefox-completes-web-as-a-platform-for-gaming/"&gt;ওয়েব অডিও এপিআই&lt;/a&gt; যুক্ত করার মাধ্যমে ওয়েবকে গেমিংয়ের জন্য বিস্ময়কর একটি প্লাটফর্মে পরিণত করা হয়।&lt;/p&gt;
+&lt;p&gt;আপডেট করা ব্রাউজার ইন্টারফেস এবং উইন্ডোজ ৮ এর জন্য বিশেষায়িত ফায়ারফক্স ব্রাউজার-সহ শীঘ্রই কিছু উদ্দীপক জিনিশ নিয়ে আসছি আমরা। পরের বছর ওয়েবে আর কি কি নতুন প্রযুক্তির উদ্ভব হবে সেটা দেখতে আমরা অধীর হয়ে আছি! টুইটারে আপনার সবচেয়ে প্রিয় ফায়ারফক্স-স্মৃতি শেয়ার করুন বা পুরো সপ্তাহ ফায়ারফক্সকে আলোচিত করুন [#HappyBirthdayFirefox] হ্যাশট্যাগ দিয়ে।&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;বসুন্ধরা আবাসিক এলাকার মোজিলিয়ানরা &lt;a href="http://ronycrony.wordpress.com/2013/11/11/%E0%A6%AC%E0%A6%B8%E0%A7%81%E0%A6%A8%E0%A7%8D%E0%A6%A7%E0%A6%B0%E0%A6%BE-%E0%A6%AE%E0%A6%9C%E0%A6%BF%E0%A6%B2%E0%A6%BF%E0%A7%9F%E0%A6%BE%E0%A6%A8-%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%AE%E0%A6%9C/"&gt;কেক কেটে উজ্জাপন&lt;/a&gt; করেছেন ফায়ারফক্সের নবম জন্মদিন&lt;/em&gt; :D&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Sat, 09 Nov 2013 02:09:00 +0600</pubDate><guid>tag:,2013-11-09:posts/2013/11/09/শুভ-৯ম-জন্মদিন-ফায়ারফক্স/</guid><category>Mozilla</category></item><item><title>Intro to Web - A Webmaker event at AIUB</title><link>/posts/2013/09/27/intro-to-web-a-webmaker-event-at-aiub/</link><description>&lt;p&gt;The Firefox @ AIUB community is relatively a new Firefox Club, in fact
+it isn't actually a registered club yet. Our idea is to be objective
+than being subjective and we found that if we had the AIUB authority
+supporting us, then registering as a club is not the most important
+thing at this moment. Thus we started our journey to spread the
+philosophy of Open Web and Open Source in our campus :D&lt;/p&gt;
+&lt;p&gt;On a small adda, almost two months ago, someone proposed we have a
+Webmaker event. Since most of us have very little idea about how
+actually websites work, the proposal was greeted with mass appraisal :)
+We talked to our honorable faculties and after many days of planning
+arranged &lt;a href="http://www.facebook.com/events/203313443175367/" title="Intro to Web - A Webmaker event"&gt;Intro to Web - A Webmaker
+event&lt;/a&gt;.
+And it was a blast! :D :D All thanks goes to Saef sir for guiding us
+through the whole event!&lt;/p&gt;
+&lt;p&gt;We had no prior experience in event organizing, so we did some rigorous
+planning before this one. And it paid us well \^_\^ We even had plan B,
+plan C in case of emergencies which actually occurred! When three of our
+Mozillian attendees couldn't make it to the event, we triggered our back
+up plan and improvised with anything else. Personally, I am grateful
+that my teammates are so awesome that we had almost all the ends tied up
+:)&lt;/p&gt;
+&lt;p&gt;Around 2 PM when half of the computer lab was full and we were still
+copying local version of Thimble, Mr. Mashiour Rahman, Assistant
+Professor and Head, Computer Science, dropped in to see our progress! We
+did ask our honorable teacher to visit us in his free time but this was
+so unexpected! Mashiour sir even gave a short speech, which was truly
+inspiring for us :)&lt;/p&gt;
+&lt;p&gt;Anam started with a introduction to Mozilla. He explained why Mozilla is
+concerned about the Open Web and why we should care. Then he gave a
+short review of Mozilla Bangladesh community's activities to date.
+Afterwards Anam transcended in and out after sessions. A few
+participants had some questions about Mozilla and it's activities, Anam
+explained those nicely :)&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1194" align="alignnone" width="474"]&lt;img alt="How can I
+join
+Mozilla?" src="http://minhazratul.files.wordpress.com/2013/09/img_50822.jpg" /&gt;
+How can I join Mozilla?[/caption]&lt;/p&gt;
+&lt;p&gt;After that Sharif came with X-ray Goggles :D We started with X-ray
+Goggles because with this cool tool the participants will be able to get
+a clear view of how websites are constructed.&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1197" align="alignnone" width="474"]&lt;img alt="Sharif
+with X-ray
+Goggles" src="http://minhazratul.files.wordpress.com/2013/09/img_50881.jpg" title="Sharif with X-ray Goggles" /&gt;
+Sharif with X-ray Goggles[/caption]&lt;/p&gt;
+&lt;p&gt;After Sharif, Rifaz came forward with Mozilla Thimble. The participants
+were eagerly waiting for this one because this is when they get to try
+out their newly learned coding skills :D&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1209" align="alignnone" width="474"]&lt;img alt="Rifaz
+explaining tags in
+HTML" src="http://minhazratul.files.wordpress.com/2013/09/img_51181.jpg" title="Rifaz explaining tags in HTML" /&gt;
+Rifaz explaining tags in HTML[/caption]&lt;/p&gt;
+&lt;p&gt;Now that the participants had two tools under their belt, we gave them
+some time to get creative and build something :D&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1201" align="alignnone" width="474"]&lt;img alt="Let's
+create
+something!" src="http://minhazratul.files.wordpress.com/2013/09/img_50961.jpg" /&gt;
+Let's create something![/caption]&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1251" align="alignnone" width="474"]&lt;img alt="Hello
+from
+Mozilla!" src="http://minhazratul.files.wordpress.com/2013/09/1ly-4-mozilla.jpg" /&gt;
+Hello from Mozilla![/caption]&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1219" align="alignnone"
+width="474"]&lt;img alt="Volunteers and facilitators helping the
+participants" src="http://minhazratul.files.wordpress.com/2013/09/img_51461.jpg" /&gt;
+Volunteers and facilitators helping the participants[/caption]&lt;/p&gt;
+&lt;p&gt;Here are a few of the works done by our participants :D&lt;/p&gt;
+&lt;p&gt;https://hasantg.makes.org/thimble/my-amazing-crazy-stuffs&lt;/p&gt;
+&lt;p&gt;http://honesty.makes.org/goggles/honestys-remix-of-american-international-universitybangladesh-&lt;/p&gt;
+&lt;p&gt;https://webpagemaker-dev.allizom.org/p/00/&lt;/p&gt;
+&lt;p&gt;https://webpagemaker-dev.allizom.org/p/0a/&lt;/p&gt;
+&lt;p&gt;https://webpagemaker-dev.allizom.org/p/0x/&lt;/p&gt;
+&lt;p&gt;https://reznov9185.makes.org/thimble/its-1500-mr-mozilla&lt;/p&gt;
+&lt;p&gt;And my personal favorite:&lt;/p&gt;
+&lt;p&gt;https://reznov9185.makes.org/thimble/wolverine-vs-hulk-edited-by-sajid-&lt;/p&gt;
+&lt;p&gt;Afterwards we selected 3 of the best Remixes and gave them prizes :D&lt;/p&gt;
+&lt;p&gt;[gallery type="rectangular" ids="1230,1232,1235"]&lt;/p&gt;
+&lt;p&gt;Around 5 PM when we were at the end of the event the speakers also
+received some gift packs from AIUB. We gifted lanyards to our honorable
+faculties.&lt;/p&gt;
+&lt;p&gt;[gallery ids="1240,1239,1238,1241"]&lt;/p&gt;
+&lt;p&gt;Thus the event officially ended :D&lt;/p&gt;
+&lt;p&gt;More photos at Flickr:
+http://www.flickr.com/photos/minhazr/sets/72157635934429984/&lt;/p&gt;
+&lt;p&gt;Organized by Firefox @ AIUB community
+(http://www.facebook.com/groups/fxaiub/)&lt;/p&gt;
+&lt;p&gt;A part of Mozilla Bangladesh (http://www.facebook.com/groups/MozillaBD/)&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Fri, 27 Sep 2013 17:45:00 +0600</pubDate><guid>tag:,2013-09-27:posts/2013/09/27/intro-to-web-a-webmaker-event-at-aiub/</guid><category>AIUB</category><category>event</category></item><item><title>ওপেন ওয়েবকে ছড়িয়ে দিতে ফায়ারফক্স স্টুডেন্ট অ্যাম্বাসেডর হয়ে যান আজই!</title><link>/posts/2013/06/09/%E0%A6%AB%E0%A6%BE%E0%A7%9F%E0%A6%BE%E0%A6%B0%E0%A6%AB%E0%A6%95%E0%A7%8D%E0%A6%B8-%E0%A6%85%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%AE%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A7%87%E0%A6%A1%E0%A6%B0-%E0%A6%B9%E0%A6%A8/</link><description>&lt;p&gt;গত ১৭ মে-তে মজিলার ফায়ারফক্স স্টুডেন্ট অ্যাম্বাসেডর প্রোগ্রাম চালু হবার
+পর এখন পর্যন্ত সারা বিশ্বের প্রায় অর্ধশত শিক্ষা প্রতিষ্ঠানে ফায়ারফক্স
+ক্লাব খোলা হয়েছে এবং হাজারো শিক্ষার্থী যোগ দিয়েছে এতে। কিন্তু এখনও
+অনেকের কাছে এই প্রোগ্রামটির কার্যকরণ এবং অংশগ্রহণের প্রক্রিয়া স্পষ্ট নয়।
+সত্যি বলতে, ফায়ারফক্স স্টুডেন্ট অ্যাম্বাসেডর প্রোগ্রামে যোগ দেয়া এবং
+নিজের শিক্ষাপ্রতিষ্ঠানে মজিলার দর্শনকে ছড়িয়ে দেয়ার এই কাজটা খুবই সহজে
+কয়টি ধাপ অনুসরণ করে করা যায়।&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ধাপ ১:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;মজিলার সাথে কাজ করার সর্বপ্রথম ধাপ হল &lt;a href="https://lists.mozilla.org/listinfo/community-bangladesh" title="community-bangladesh -- Mozilla Bangladesh mailing list"&gt;মেইলিং
+লিস্টে&lt;/a&gt;
+সাবস্ক্রাইব করা এবং ফেসবুকে &lt;a href="http://www.facebook.com/groups/MozillaBD/" title="Mozilla Bangladesh"&gt;মজিলা
+বাংলাদেশ&lt;/a&gt;
+গ্রুপে যোগ দেয়া। এতে করে আপনি সার্বক্ষণিকভাবে বাংলাদেশে মজিলার কার্যক্রম
+সম্পর্কে অবগত থাকতে পারবেন, এবং এ সম্পর্কিত যেকোন প্রশ্নের উত্তর বা তথ্য
+জানতে পারবেন।&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ধাপ ২:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;সবধরণের অনলাইন মিটিং সম্পন্ন করা হয় IRC তে। তাই গ্রুপ এবং মেইলিং লিস্টে
+যোগ দেবার পরই আপনার কাজ হবে কোন চ্যাট ক্লায়েন্টের মাধ্যমে
+irc.mozilla.org সার্ভারে একটি নিক নেয়া। এই সার্ভারের #Bangladesh
+রুমটিতে মজিলা বাংলাদেশের আলোচনা, আলাপ কিংবা মিটিং হয়ে থাকে।&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ধাপ ৩:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;আপনি ১৮ বছর বা তার ওপর বয়েসের হয়ে থাকলে এবং উচ্চতর শিক্ষার সম্পৃক্ত
+(শিক্ষার্থী কিংবা শিক্ষক, কিংকা কর্মকর্তা) থাকলে এখানে গিয়ে আপনার নাম,
+ইমেইল ঠিকানা, শিক্ষা প্রতিষ্ঠান এবং শহর, পড়ালেখার বিষয় ইত্যাদি তথ্য দিয়ে
+&lt;a href="http://www.mozilla.org/en-US/contribute/universityambassadors/" title="Mozilla - Firefox Student Ambassadors"&gt;সাইন
+আপ&lt;/a&gt;
+করে ফেলুন ফায়ারফক্স অ্যামবাসেডর প্রোগ্রামে।&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1062" align="alignnone" width="474"]&lt;a href="http://www.mozilla.org/en-US/contribute/universityambassadors/"&gt;&lt;img alt="Sign up
+form for Firefox Ambassadors
+program" src="http://minhazratul.files.wordpress.com/2013/06/screenshot-from-2013-06-09-220529.png" title="Sign up form for Firefox Ambassadors program" /&gt;&lt;/a&gt;
+Sign up form for Firefox Ambassadors program[/caption]&lt;/p&gt;
+&lt;p&gt;কিছুক্ষণের মধ্যেই মজিলা থেকে একটি কনফার্মেশন মেইল পেয়ে যাবেন আপনি।&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ধাপ ৪:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;আপনি নিচের ছবিটির মত কনফার্মেশন মেইল পেয়ে থাকলে, আপনাকে ফায়ারফক্স
+স্টুডেন্ট অ্যামবাসেডর প্রোগ্রামে স্বাগতম! ফেসবুকে &lt;a href="http://www.facebook.com/groups/298008373667320/" title="Firefox Student Ambassadors, Bangladesh"&gt;ফায়ারফক্স স্টুডেন্ট
+অ্যাম্বাসেডর&lt;/a&gt;&lt;a href="http://www.facebook.com/groups/298008373667320/" title="Firefox Student Ambassadors, Bangladesh"&gt;,&lt;/a&gt;&lt;a href="http://www.facebook.com/groups/298008373667320/" title="Firefox Student Ambassadors, Bangladesh"&gt;বাংলাদেশ&lt;/a&gt;
+গ্রুপটিতে এখন যোগ দিতে পারেন। সাথে মজিলা বাংলাদেশ গ্রুপের &lt;a href="https://www.facebook.com/groups/MozillaBD/doc/552250128159208/"&gt;ফায়ারফক্স
+অ্যাম্বাসেডর
+লিস্টে&lt;/a&gt;
+নিজের নামটি IRC নিকসহ যোগ করে দিন।&lt;/p&gt;
+&lt;p&gt;[caption id="attachment_1063" align="alignnone" width="474"]&lt;img alt="Email
+confirmation after signing up for Firefox Student Ambassador
+program" src="http://minhazratul.files.wordpress.com/2013/06/screenshot-from-2013-06-09-221116.png" /&gt;
+Email confirmation after signing up for Firefox Student Ambassador
+program[/caption]&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ধাপ ৫:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;আপনার পরবর্তি কাজ হবে আপনার শিক্ষা প্রতিষ্ঠানের ফায়ারফক্স ক্লাবে যোগ
+দেয়া। শিক্ষা প্রতিষ্ঠানটিতে ফায়ারফক্স ক্লাব আছে কী না তা জেনে নিন
+অফিসিয়াল ক্লাবগুলোর
+&lt;a href="https://wiki.mozilla.org/StudentAmbassadors/FirefoxClubs/Directory" title="FirefoxClubsDirectory - MozillaWiki"&gt;লিস্ট&lt;/a&gt;
+থেকে। ক্লাব থেকে থাকলে সরাসরি ধাপ ৮ এ চলে যান।&lt;/p&gt;
+&lt;p&gt;না পেলে আপনি নিজেই খুলে নিতে পারেন একটি ফায়ারফক্স ক্লাব! তা করতে পরের
+ধাপ দেখুন।&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ধাপ ৬:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;শিক্ষা প্রতিষ্ঠানে ক্লাব খুলতে হবে সবার আগে আপনাকে স্টুডেন্ট অ্যাফেয়ার
+অফিসের সাথে কথা বলে একটি অফিসিয়াল ফায়ারফক্স &lt;a href="https://wiki.mozilla.org/StudentAmbassadors/FirefoxClubs#No_group_for_your_school.3F_Here_are_a_6_easy_steps_to_set_one_up"&gt;খোলার
+অনুমতি&lt;/a&gt;
+নিতে হবে। অনুমতি পেলে এই লিংক থেকে আপনার প্রতিষ্ঠানের ফায়ারফক্স ক্লাবটির
+জন্য মজিলা উইকিতে একটি &lt;a href="https://wiki.mozilla.org/Form:FirefoxClub" title="Form:FirefoxClub"&gt;পাতা
+তৈরী&lt;/a&gt; করে
+ফেলুন।&lt;/p&gt;
+&lt;p&gt;এই পাতাটিতে ক্লাবটির ফেসবুক গ্রুপের লিংকটি জুড়ে দিতে ভুলবেন না কিন্তু!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ধাপ ৭:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ক্লাব খোলার সময় আপনাকে ক্লাবের প্রশাসন সম্পর্কে তথ্য দিতে হতে পারে। তাই
+একটি প্রাথমিক মিটিং করে এই পদগুলোর ভার ন্যাস্ত করুন সদস্য
+অ্যাম্বাসেডরদের ওপর:&lt;/p&gt;
+&lt;p&gt;১. ক্লাব প্রধান&lt;/p&gt;
+&lt;p&gt;২. যোগাযোগ প্রধান&lt;/p&gt;
+&lt;p&gt;৩. রিক্রুট প্রধান&lt;/p&gt;
+&lt;p&gt;৪. অনুষ্ঠান প্রধান&lt;/p&gt;
+&lt;p&gt;৫. ডেভেলপার সম্পর্ক স্থাপনকারী&lt;/p&gt;
+&lt;p&gt;ক্লাব উইকি পাতায় এসব তথ্যও দিতে ভুলবেন না!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ধাপ ৮:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;আপনার প্রতিষ্ঠানে ক্লাব খোলা হয়েছে! স্বাগতম!&lt;/p&gt;
+&lt;p&gt;এখন আপনার ক্লাবের কাজ হল নিয়মিত মিটিং ডাকা এবং&lt;/p&gt;
+&lt;p&gt;&gt; ফায়ারফক্স ব্রাউজার প্রোমোট করা&lt;/p&gt;
+&lt;p&gt;&gt; ফায়ারফক্স ওএস এর সাথে শিক্ষার্থীদের পরিচয় করিয়ে দেয়া&lt;/p&gt;
+&lt;p&gt;&gt; মানুষকে মজিলার মিশন সম্বন্ধে জানানো&lt;/p&gt;
+&lt;p&gt;&gt; মজিলা কমিউনিটিকে গড়ে তোলা!&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.facebook.com/groups/MozillaBD/" title="Mozilla Bangladesh"&gt;মজিলা
+বাংলাদেশ&lt;/a&gt;
+এবং &lt;a href="http://www.facebook.com/groups/298008373667320/" title="Firefox Student Ambassadors, Bangladesh"&gt;ফায়ারফক্স স্টুডেন্ট অ্যামবাসেডরস,
+বাংলাদেশ&lt;/a&gt;
+গ্রুপে কথা হবে!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Sun, 09 Jun 2013 22:26:00 +0600</pubDate><guid>tag:,2013-06-09:posts/2013/06/09/ফায়ারফক্স-অ্যাম্বাসেডর-হন/</guid><category>how-to</category></item><item><title>Domino Harvey</title><link>/posts/2013/01/21/domino-harvey/</link><description>&lt;ul&gt;
+&lt;li&gt;I was searching for Robert Crais books&lt;/li&gt;
+&lt;li&gt;Found Janet Evanovich who writes similar kind of books&lt;/li&gt;
+&lt;li&gt;Got to know Stephanie Plum series&lt;/li&gt;
+&lt;li&gt;Found reference to a female bounty hunter in the USA, Domino Harvey&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Intriguing!&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Domino_Harvey"&gt;http://en.wikipedia.org/wiki/Domino_Harvey&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Mon, 21 Jan 2013 11:54:00 +0600</pubDate><guid>tag:,2013-01-21:posts/2013/01/21/domino-harvey/</guid><category>bounty-hunters</category><category>elvis-cole</category></item><item><title>মশা মারিবার কামান</title><link>/posts/2013/01/19/%E0%A6%AE%E0%A6%B6%E0%A6%BE-%E0%A6%AE%E0%A6%BE%E0%A6%B0%E0%A6%BF%E0%A6%AC%E0%A6%BE%E0%A6%B0-%E0%A6%95%E0%A6%BE%E0%A6%AE%E0%A6%BE%E0%A6%A8/</link><description>&lt;p&gt;রাত জাগিয়া পড়ালেখা করিবার মাহাত্ম্য বিবিধ। এক হইল, আপনার জীবনের লক্ষ্য
+নতুন করিয়া খুঁজিয়া পাওয়া যায়।&lt;/p&gt;
+&lt;p&gt;আজিকে এই নিশিথ রাত্রিতে বহুদিন পর অংক কষিতে বসিয়া আমিও অনুধাবন করিলাম
+আমার জীবনের লক্ষ্য। আমি বড় হইয়া মশা মারিবার কামান হইতে চাই।&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Sat, 19 Jan 2013 04:15:00 +0600</pubDate><guid>tag:,2013-01-19:posts/2013/01/19/মশা-মারিবার-কামান/</guid><category>jokes</category><category>life</category></item><item><title>শীতকালে ফ্রিজের দাম কমে</title><link>/posts/2013/01/09/%E0%A6%B6%E0%A7%80%E0%A6%A4%E0%A6%95%E0%A6%BE%E0%A6%B2%E0%A7%87-%E0%A6%AB%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%9C%E0%A7%87%E0%A6%B0-%E0%A6%A6%E0%A6%BE%E0%A6%AE/</link><description>&lt;p&gt;ইতিহাস থেকে জানা যায় বাংলাদেশে সর্বকালের সর্বনিম্ন তাপমাত্রা ছিল ৪.৫
+ডিগ্রী সেন্টিগ্রেড। মাপা হয়েছিল ২০১১ সালের ডিসেম্বরে, যশোরে।&lt;/p&gt;
+&lt;p&gt;সেখানে ফ্রিজের দাম পয়সায় নেমে এসেছিল মনে হয়।&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Wed, 09 Jan 2013 16:25:00 +0600</pubDate><guid>tag:,2013-01-09:posts/2013/01/09/শীতকালে-ফ্রিজের-দাম/</guid><category>jokes</category><category>winter</category><category>b</category></item><item><title>এরপরও শীত কি করে উপভোগ করা যায়!</title><link>/posts/2013/01/09/%E0%A6%8F%E0%A6%B0%E0%A6%AA%E0%A6%B0%E0%A6%93-%E0%A6%B6%E0%A7%80%E0%A6%A4-%E0%A6%95%E0%A6%BF-%E0%A6%95%E0%A6%B0%E0%A7%87-%E0%A6%89%E0%A6%AA%E0%A6%AD%E0%A7%8B%E0%A6%97-%E0%A6%95%E0%A6%B0%E0%A6%BE-%E0%A6%AF%E0%A6%BE%E0%A7%9F/</link><description>&lt;p&gt;উত্তর বঙ্গে শীতে হাজারো মানুষ থর থর করে কাঁপছে, অনেকের গায়ে স্রেফ কাপড়ের
+টুকরো যেগুলোকে পোশাক পর্যন্ত বলা যায় না। মানুষ মরছে, কোথায় কখন তা হয়ত
+পত্রিকাগুলো না জানালে কখনোই জানতে পারব না, অথচ কারো কারো হয়ত নতুন বছরটাই
+শুরু হয়েছে প্রিয়জনের শীতল মুখটা দেখে।&lt;/p&gt;
+&lt;p&gt;এমন অবস্থায় তিনটে সোয়েটারের সাথে ভারী জিনসের প্যান্ট পরে দরজা-জানলা বন্ধ
+ঘরে প্রিয় কম্পিউটারের সামনে বসে আপনি শীত কতটা অপছন্দ করেন তা বলে
+স্ট্যাটাস দেওয়াটা কতটা নির্লজ্জের মত কাজ?&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Wed, 09 Jan 2013 13:38:00 +0600</pubDate><guid>tag:,2013-01-09:posts/2013/01/09/এরপরও-শীত-কি-করে-উপভোগ-করা-যায়/</guid><category>social-work</category></item><item><title>অ্যাকশন: চানাচুর পার্টি!</title><link>/posts/2012/12/21/action-chanachur-party/</link><description>&lt;p&gt;আজকের সারপ্রাইজ চানাচুর পার্টি একেবারেই "শক পার্টিতে" পরিণত হল! :V&lt;br /&gt;
+১. যাদের আসার কথা ছিল তারা আসেই নি&lt;br /&gt;
+২. যাদের আসার কথা ছিল না, তারা এসেছে বটে, কিন্তু অসময়ে!&lt;/p&gt;
+&lt;p&gt;কথায় আছে, সব কিছুরই ভাল-খারাপ দিক থাকে ;) এই সুপার ফ্লপ পার্টির উছিলায়
+লাভ হল:&lt;br /&gt;
+১. &lt;a href="http://www.facebook.com/ruhi.mona?directed_target_id=0"&gt;Ruhi&lt;/a&gt; আপুর
+বানানো চমৎকার মুড়ি-চানাচুর খাবার সুযোগ হল&lt;br /&gt;
+২. চানাচুর খেতে খেতে সবার সাথেই বেশ ভাল আড্ডা হল :V শুধু কাপড়ে মুখ গুজে
+থাকলে আড্ডা দেবার সুযোগই হত না!&lt;br /&gt;
+৩. এটা অবশ্য কিঞ্চিত স্বার্থপর মনে হতে পারে, তারপরও, চানাচুর পার্টি
+ভেস্তে যাওয়ায় আমার আর খরচ করতে হল না!&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.facebook.com/adt.bd?directed_target_id=0"&gt;Tithi&lt;/a&gt; আর
+&lt;a href="http://www.facebook.com/Twinkle.mitu?directed_target_id=0"&gt;Mitu&lt;/a&gt; থাকলে
+অবশ্য বেশ হত! :) এক অর্থে ভালই হল, পরে সবাই এক হলে আরেকটা চানাচুর পার্টি
+হাঁকানো যাবে! দেখা যাচ্ছে এই ভেস্তে যাওয়া 'শক' পার্টির ভাল দিকও কম না! —
+with &lt;a href="http://www.facebook.com/ruhi.mona?viewer_id=100002852058464"&gt;Fariha Tasnim
+Ruhi&lt;/a&gt; and
+&lt;a href="http://www.facebook.com/browse/participants/?q=AeINg27T9w1zwNQhBuwDT3u-75RgWSaHxRvzO4QrfAF42a7z5i8zrbvxnEYmE0t3JiYOaJtASzyiekHDGAUqNxFd8Xaoi1YAQr-87wSadFTuCQhh-5IagfdtBCaOS6F7I-vJO8a6nyU-FkJZcSh1jKH4i8qaT9fta-uMj5guubI7eVYjDpidRkwjQzoMqPItszdXWxoImn5LV_task37WPmB3M5FsG_iB73qXbuZmcCCJ3VOUQZl7gtfOs8yrKgdFU1jH45zPPM7FWI-q4OS9cUq"&gt;2
+others&lt;/a&gt;
+at Sorting point for Action: উষ্ণতা.&lt;/p&gt;
+&lt;p&gt;// ক'দিন পর আবারো চানাচুর পার্টি করেছি!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Fri, 21 Dec 2012 12:00:00 +0600</pubDate><guid>tag:,2012-12-21:posts/2012/12/21/action-chanachur-party/</guid><category>Bangla</category><category>CommunityAction</category><category>Winter</category></item><item><title>এলিয়ান মথ</title><link>/posts/2009/10/17/%E0%A6%8F%E0%A6%B2%E0%A6%BF%E0%A7%9F%E0%A6%BE%E0%A6%A8-%E0%A6%AE%E0%A6%A5/</link><description>&lt;p&gt;একটা মথ মারলাম ভাল করে। থক থকে&lt;br /&gt;
+ভুঁড়িটা ভাল করে ফাঁটিয়ে দিয়েছি। তুলতুলে ভুঁড়িটা!  &lt;/p&gt;
+&lt;p&gt;মাথাটা ভূপাতিত। আমার কম্পাসের কাঁটা না;&lt;br /&gt;
+ভাল করে খুঁচিয়ে দিয়েছি। প্রায় যখন আলাদাই করে&lt;br /&gt;
+ফেলেছি, তখন চোখ আর অ্যান্টেনা দু'টো&lt;br /&gt;
+চোখে পড়ল। কী মায়া মায়া ভাব, আহারে, খেক&lt;br /&gt;
+খেক; মনে করেছে মাফ করে দিব। অ্যান্টেনা-সহ&lt;br /&gt;
+মাথাটা পুরো এলিয়ানের মত লাগছিল। অসহায়&lt;br /&gt;
+একটা এলিয়ান, হে হে; অসহায় একটা এলিয়ানের কথা&lt;br /&gt;
+ভাবলেই হাসি পায়!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Sat, 17 Oct 2009 01:47:00 +0700</pubDate><guid>tag:,2009-10-17:posts/2009/10/17/এলিয়ান-মথ/</guid><category>poems</category></item><item><title>আমার অনুরণিত হওয়া দরকার</title><link>/posts/2009/10/17/%E0%A6%85%E0%A6%A8%E0%A7%81%E0%A6%B0%E0%A6%A3/</link><description>&lt;p&gt;আমার অনুরণিত হওয়া দরকার।&lt;br /&gt;
+এই যে  আমার চারপাশের স্তব্দ-নিস্তব্ধ-আবদ্ধ জগত,&lt;br /&gt;
+এতে থেকে আসলে কী হয়? আমার আর ভাল্লাগে না।&lt;br /&gt;
+আমার ভাল করে নাড়া খাওয়া দরকার,&lt;br /&gt;
+দরকার এমন কিছু যা আমাকে ভাল করে নাড়া দেবে;&lt;br /&gt;
+আমাকে স্থির-স্থবির-স্থিত করবে, আমাকে ভাবাবে।&lt;br /&gt;
+হয়তো সেটা ভালবাসা, হয়তো সেটা মৃত্যু, হয়তো&lt;br /&gt;
+ভাল ভাবে ধরা খাওয়া, নইলে নাড়া খাব কী করে?  &lt;/p&gt;
+&lt;p&gt;আমার অনুরণিত হওয়া দরকার।&lt;br /&gt;
+আমার চারপাশের সব বালু মেশানো পানির থিতানো তলানি&lt;br /&gt;
+হয়ে গেছে; তরঙ্গহীন-নিস্তরঙ্গ, নিরব-নিশ্চুপ, নিস্তরঙ্গ-তরঙ্গহীন।&lt;br /&gt;
+তাই আমি বলছি কি; আমার নাড়া খেতে হবে ভাল করে।&lt;br /&gt;
+না হলে হবে না; হয়তো ভালবাসা, নাহয় মৃত্যু।  &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Sat, 17 Oct 2009 01:20:00 +0700</pubDate><guid>tag:,2009-10-17:posts/2009/10/17/অনুরণ/</guid><category>poems</category></item><item><title>আমি ভালবাসি কবিতা</title><link>/posts/2008/09/16/%E0%A6%86%E0%A6%AE%E0%A6%BF-%E0%A6%AD%E0%A6%BE%E0%A6%B2%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A6%BF-%E0%A6%95%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%BE/</link><description>&lt;p&gt;আমি ভালবাসি কবিতা। কারণ কবিতা মেটায়&lt;/p&gt;
+&lt;p&gt;আমার প্রাণের পিয়াসা।&lt;/p&gt;
+&lt;p&gt;কবিতাকে আমার মনে হয় কোন বারবনিতা;&lt;/p&gt;
+&lt;p&gt;আমায় মুগ্ধ করে রাখে; তার রূপে, সুরে, গন্ধে।&lt;/p&gt;
+&lt;p&gt;তার হাসির শব্দে; আমি ভুলে যাই আমার&lt;/p&gt;
+&lt;p&gt;আমিকে; আমি বিভোর হই, তার কথার ভঙ্গীমায়।&lt;/p&gt;
+&lt;p&gt;আমি; আমার শত গ্লানি ভুলে যাই, তার কাছে&lt;/p&gt;
+&lt;p&gt;এসে; তার নরম হাতের স্পর্শে, আমি হারিয়ে যাই;&lt;/p&gt;
+&lt;p&gt;যখন নিজেকে হারাতে চাই।&lt;/p&gt;
+&lt;p&gt;কবিতা, কবিতা; আমি ভালবাসি কবিতা।&lt;/p&gt;
+&lt;p&gt;আমার কাছে সে রুপপোজীবিনী, এক বারবনিতা।&lt;/p&gt;
+&lt;p&gt;সকাল সাড়ে ন'টা।&lt;/p&gt;
+&lt;p&gt;১ আশ্বিন, ১৪১৫।&lt;/p&gt;
+&lt;p&gt;১৬ সেপ্টেম্বর, ২০০৮।&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Tue, 16 Sep 2008 09:30:00 +0600</pubDate><guid>tag:,2008-09-16:posts/2008/09/16/আমি-ভালবাসি-কবিতা/</guid><category>poems</category></item><item><title>কোথায় গেল ভালবাসা?</title><link>/posts/2008/08/23/%E0%A6%95%E0%A7%8B%E0%A6%A5%E0%A6%BE%E0%A7%9F-%E0%A6%97%E0%A7%87%E0%A6%B2-%E0%A6%AD%E0%A6%BE%E0%A6%B2%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A6%BE/</link><description>&lt;p&gt;&lt;em&gt;** সুরটা যেন হারিয়ে গিয়েছিল কয়দিন পর :'( তাই আর লেখা হয় নি!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;আজকালকার দিনে ভালবাসাটাকে দেখাই যায় না যেন।&lt;/p&gt;
+&lt;p&gt;কোথায় গিয়ে যে বসে থাকে, কে জানে। আমি অবশ্য&lt;/p&gt;
+&lt;p&gt;কবি-সাহিত্যিক বা তেমন কিছু না, তাই খুঁজেও&lt;/p&gt;
+&lt;p&gt;দেখিনি তেমন করে। কিন্তু গেলটা কই, ভালবাসা?&lt;/p&gt;
+&lt;p&gt;রফিক সাহেব। বন্ধু মানুষ, কবির মত সারাক্ষণই তার&lt;/p&gt;
+&lt;p&gt;উড়ু উড়ু ভাব। কবিতার বই, ছাপানো হয়েছিল হয়তবা&lt;/p&gt;
+&lt;p&gt;দু' একটা, তাই গিয়ে জিজ্ঞেশ করলাম; ভালবাসার&lt;/p&gt;
+&lt;p&gt;খবর। জানতে চাইলাম, 'কই গেল ভাই; ভালবাসাটা?'&lt;/p&gt;
+&lt;p&gt;রফিক সাহেব; সারাখণই তো কবিতা গুড়ু গুড়ু কনে মনে,&lt;/p&gt;
+&lt;p&gt;দুলে দুলে বলে উঠলেন,'ভাল নাইরে ভাই, ভাল নাই,&lt;/p&gt;
+&lt;p&gt;কিছুই আর ভাল নাই, সেই ফজলি আমও নাই,&lt;/p&gt;
+&lt;p&gt;সেই ভালবাসাও নাই।' আমি তো আর কবি না, দু' এক&lt;/p&gt;
+&lt;p&gt;লাইন লিখতাম হয়ত কখনো কখনো, তাই কথাটা বুঝলাম না।&lt;/p&gt;
+&lt;p&gt;গেলাম শাহানা আপার কাছে। আপার যা হন্তদন্ত&lt;/p&gt;
+&lt;p&gt;অবস্থা তখন, তখন আবার মনে আমার কবি কবি&lt;/p&gt;
+&lt;p&gt;ভাব, তাই সুর করে বললাম,'কোথা যাস আপারে,&lt;/p&gt;
+&lt;p&gt;লোন এত খেপারে?' তখন মনমরা হয়ে আমার&lt;/p&gt;
+&lt;p&gt;খালাত বোন শাহানা আপা বললেন,'ভাইরে, কোথা&lt;/p&gt;
+&lt;p&gt;পাই ভাল-বাসা, ভালবাসাটাও যেন কোথাও নাই রে!'&lt;/p&gt;
+&lt;p&gt;আহা রে, 'ভালবাসা নাই রে!' বেচারি শাহানা আপা,&lt;/p&gt;
+&lt;p&gt;ভালবাসা আর ভাল-বাসার খোঁজে দিশেহারা,&lt;/p&gt;
+&lt;p&gt;আপার জন্য চাইলে খুঁজে দিতে পারি ভাল-বাসা,&lt;/p&gt;
+&lt;p&gt;কিন্তু যাকে আমি খুঁজছি, সেই ভালবাসাকে কোথা পাই!&lt;/p&gt;
+&lt;p&gt;দিন যায় আর আসে, আমি অফিস যাই আর&lt;/p&gt;
+&lt;p&gt;আসি; একদিন ধরলাম এক রিকশাঅলাকে,'ভাই,&lt;/p&gt;
+&lt;p&gt;দেখেছেন কোথাও, ভালবাসাটারে?' মুখখানি&lt;/p&gt;
+&lt;p&gt;করুণ করে রিকশাঅলা বলল,'বাই, বউ ব'লে&lt;/p&gt;
+&lt;p&gt;আর  আইত না, সাত বছরের পোয়াডা আর চাইর&lt;/p&gt;
+&lt;p&gt;বছরের মাইয়াডারেও গেছে লইয়া, তাই ভাইরে;&lt;/p&gt;
+&lt;p&gt;ভালবাসা আমার লাইগা কোনহানে নাইরে!'&lt;/p&gt;
+&lt;p&gt;আহারে, সৃষ্টির আদিমতম চাওয়া, ভালবাসা,&lt;/p&gt;
+&lt;p&gt;কোথাও নাই, কিন্তু ভালবাসা যে আমার চাই,&lt;/p&gt;
+&lt;p&gt;কোথা তারে পাই?&lt;/p&gt;
+&lt;p&gt;...   ...   ...   ...&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;* শেষ হইয়াও হইল না শেষ!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;বুধবার&lt;/p&gt;
+&lt;p&gt;৮ ভাদ্র, ১৪১৫&lt;/p&gt;
+&lt;p&gt;২৩ আগস্ট, ২০০৮&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Sat, 23 Aug 2008 16:08:00 +0600</pubDate><guid>tag:,2008-08-23:posts/2008/08/23/কোথায়-গেল-ভালবাসা/</guid><category>poems</category></item><item><title>নাফিসা মিসের জন্য ভালবাসা</title><link>/posts/2008/08/20/%E0%A6%A8%E0%A6%BE%E0%A6%AB%E0%A6%BF%E0%A6%B8%E0%A6%BE-%E0%A6%AE%E0%A6%BF%E0%A6%B8%E0%A7%87%E0%A6%B0-%E0%A6%9C%E0%A6%A8%E0%A7%8D%E0%A6%AF-%E0%A6%AD%E0%A6%BE%E0%A6%B2%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A6%BE/</link><description>&lt;p&gt;নাফিসা মিসকে দেখার পর থেকেই আমার&lt;/p&gt;
+&lt;p&gt;মন শুধুই কেমন যেন করে।&lt;/p&gt;
+&lt;p&gt;যেদিন প্রথম মিসকে দেখলাম আমি,&lt;/p&gt;
+&lt;p&gt;সেদিন থেকেই এই কেমন করার শুরু। সেদিন&lt;/p&gt;
+&lt;p&gt;মিস সেদিন পড়ে এসেছিলেন নীল শেডের সাদা&lt;/p&gt;
+&lt;p&gt;সেলওয়ার কামিজ। মিসকে দেখার পর&lt;/p&gt;
+&lt;p&gt;থেকেই আমি মনে মনে গুন গুন করে&lt;/p&gt;
+&lt;p&gt;গাইতে লাগলাম-&lt;/p&gt;
+&lt;p&gt;'সাদা গোলাপের শুভ্রতায়,&lt;/p&gt;
+&lt;p&gt;দেখেছি আমি তোমায়!'&lt;/p&gt;
+&lt;p&gt;তারপর থেকে এখন পর্যন্ত দেখছি-ই।&lt;/p&gt;
+&lt;p&gt;মনে হয় মিসের প্রেমে পড়ে গেছি।&lt;/p&gt;
+&lt;p&gt;যেদিন এই কথাটা মনে হল, নিজেকে&lt;/p&gt;
+&lt;p&gt;খুব বোকা বোকা লাগল।&lt;/p&gt;
+&lt;p&gt;আমার কীনা প্রেমে পড়ার কথা&lt;/p&gt;
+&lt;p&gt;ষোল বছরের কোন কিশোরীর, আর&lt;/p&gt;
+&lt;p&gt;আমি কীনা প্রেমে পড়লাম তার&lt;/p&gt;
+&lt;p&gt;থেকে আরো দশ বছরের বড় যুবতীর।&lt;/p&gt;
+&lt;p&gt;কিন্তু না, ভেবে দেখলাম এই প্রেম&lt;/p&gt;
+&lt;p&gt;আর সেই প্রেমে বিস্তর তফাত।&lt;/p&gt;
+&lt;p&gt;একে প্রেমে পড়া বললে ঠিক হয় না,&lt;/p&gt;
+&lt;p&gt;ব্যাপারটা অনেকটা মুগ্ধ হবার মত।&lt;/p&gt;
+&lt;p&gt;আসলেই তাই; মিসের হাত নাড়ানোর&lt;/p&gt;
+&lt;p&gt;অপূর্ব ভঙ্গী(মা), কথা বলার আশ্চর্য&lt;/p&gt;
+&lt;p&gt;সূর, সবই আমার ভাল লাগে।&lt;/p&gt;
+&lt;p&gt;মিসের সব কিছুই আমার কাছে&lt;/p&gt;
+&lt;p&gt;প্রাকৃতিক নৈশর্গ্যের মত মনে হয়।&lt;/p&gt;
+&lt;p&gt;মিসের সব কিছুতেই কেমন যেন&lt;/p&gt;
+&lt;p&gt;বনদেবী বনদেবী গন্ধ।&lt;/p&gt;
+&lt;p&gt;এমন কি সেদিন যে বৃষ্টিতে ভিজে&lt;/p&gt;
+&lt;p&gt;মিস এসেছিলেন, তাঁর চুল থেকে&lt;/p&gt;
+&lt;p&gt;পড়া পানির ফোঁটাগুলোও বনদেবীর&lt;/p&gt;
+&lt;p&gt;আশীর্বাদের মত মনে হচ্ছিল।&lt;/p&gt;
+&lt;p&gt;সত্যিই কি তাহলে আমি নাফিসা&lt;/p&gt;
+&lt;p&gt;মিসের প্রেমে পড়ে গিয়েছি? নাকি মুগ্ধ হয়েছি মাত্র?&lt;/p&gt;
+&lt;p&gt;বুধবার&lt;/p&gt;
+&lt;p&gt;৫ ভাদ্র, ১৪১৫&lt;/p&gt;
+&lt;p&gt;২০ আগস্ট, ২০০৮&lt;/p&gt;
+&lt;p&gt;নাফিসা মিস কলেজে আমাদের ইংলিশ ক্লাস নিয়েছিলেন কয়েক মাস।&lt;/p&gt;
+&lt;p&gt;দু' মাস পর পারিবারিক সমস্যার কারণে কলেজ ছেড়ে চলে যান।&lt;/p&gt;
+&lt;p&gt;তার দু' দিন পর লেখা।&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Wed, 20 Aug 2008 19:10:00 +0600</pubDate><guid>tag:,2008-08-20:posts/2008/08/20/নাফিসা-মিসের-জন্য-ভালবাসা/</guid><category>poems</category></item><item><title>একটি অতিবাস্তব মৃত্যু দৃশ্য</title><link>/posts/2008/08/14/%E0%A6%85%E0%A6%A4%E0%A6%BF%E0%A6%AC%E0%A6%BE%E0%A6%B8%E0%A7%8D%E0%A6%A4%E0%A6%AC-%E0%A6%AE%E0%A7%83%E0%A6%A4%E0%A7%8D%E0%A6%AF%E0%A7%81/</link><description>&lt;p&gt;মরে গেল।&lt;br /&gt;
+সে মরে গেল।&lt;br /&gt;
+লোকটার চেহারায় ভয়, শঙ্কা, আতঙ্ক স্পষ্ট হয়ে উঠেছে।&lt;br /&gt;
+সে মনে মনে বলল,'মরে গেল। আমি যাবে ভালবাসতাম,&lt;br /&gt;
+সে মরে গেল।'&lt;br /&gt;
+তার চোখের দৃষ্টি ঝাপসা হয়ে এলো; পুরনো দিনের নানা&lt;br /&gt;
+ছবি, স্মৃতি ফ্ল্যাশব্যাক করে যেতে লাগল তার চোখের&lt;br /&gt;
+সামনে। এক গভীর দীর্ঘশ্বাস তার কষ্টের বাষ্পগুলো ভেদ করে&lt;br /&gt;
+বেরিয়ে এলো।  &lt;/p&gt;
+&lt;p&gt;পরিচালক খুশি। সম্ভবত। তার ঠোঁটের একচিলতে হাসিও&lt;br /&gt;
+হয়তো ফুঁটে উঠেছে।  &lt;/p&gt;
+&lt;p&gt;লোকটা হাঁটু গেঁড়ে বসে আছে, জুঁইয়ের মত বৃষ্টির&lt;br /&gt;
+ফোঁটাগুলো তার শরীরে লেগে থাকা রক্তগুলো ধুয়ে ফেলছে।&lt;br /&gt;
+তার চোখের কোণে হয়তো দু'ফোঁটা অশ্রু থাকার কথা,&lt;br /&gt;
+কিন্তু প্রকৃতির কান্নার সাথে তা অনেক আগেই মিশে গেছে।&lt;br /&gt;
+তার শুধুই মনে পড়ছে রবীন্দ্রনাথের কয়েকটা লাইন,&lt;br /&gt;
+    'শ্রাবণ গগণ ঘিরে&lt;br /&gt;
+    ঘন মেঘ ঘুরে ফিরে,&lt;br /&gt;
+    শুন্য নদীর তীরে&lt;br /&gt;
+        রহিনু পড়ি-'  &lt;/p&gt;
+&lt;p&gt;পরিচালকের ঠোঁটে তৃপ্তির পূর্ণ হাসি, কিন্তু আমাদের&lt;br /&gt;
+কাছে সেটা নিষ্ঠুর, দুর্বোধ্য-ও বটে।  &lt;/p&gt;
+&lt;p&gt;চারদিকে হাজার হাজার মানুষ, পিঁপড়ার মত&lt;br /&gt;
+দিশেহারা হয়ে ছুটছে। সময়ের মত চলমান এই জগতে&lt;br /&gt;
+একমাত্র এই লোকটাই স্থির; স্থবির।&lt;br /&gt;
+চারদিকে গোলাগুলির আওয়াজ, গ্রেনেডের বিস্ফোড়ন,&lt;br /&gt;
+বিচ্ছিন্ন পা; সব মিলে আশ্চর্য এক মায়াবী জগত তৈরী&lt;br /&gt;
+হয়েছে। চারদিকেই অতল অন্ধকারের হাতছানি; মায়াবী&lt;br /&gt;
+ডাক।&lt;br /&gt;
+লোকটা বসে আছে।&lt;br /&gt;
+এখনও কোলাহল শোনা যাচ্ছে, তবে অনেক দূর&lt;br /&gt;
+থেকে ভেসে আসা মিছিলের শব্দের মত।&lt;br /&gt;
+লোকটা বসে আছে। তার সামনে এখন নিথর একটা&lt;br /&gt;
+শরীর; যাকে সে এক সময় ভালবাসত।  &lt;/p&gt;
+&lt;p&gt;পরিচালক তার আকাংক্ষিত সাফল্যে মুগ্ধ। নতুন উদ্যোমে&lt;br /&gt;
+পরিচালক এখন কাজ করবেন।  &lt;/p&gt;
+&lt;p&gt;লোকটা এক দৃষ্টিতে তাকিয়ে আছে অবিন্যস্ত চুলের&lt;br /&gt;
+দিকে। মায়াময় দৃষ্টিতে। উষ্ণ হাতে সে ধরে আছে&lt;br /&gt;
+নির্জীব, শীতল, ফ্যাকাশে সাদা একটা হাত। শাঁখাগুলো&lt;br /&gt;
+তখনও সাদা, মৃত্যুর ছায়া লোকটার ওপর পড়লেও&lt;br /&gt;
+শাঁখাগুলোকে এড়িয়ে গেছে, হয়তোবা সেগুলোর মায়াময়তার&lt;br /&gt;
+কারণে।  &lt;/p&gt;
+&lt;p&gt;নতুন দৃশ্যের জন্য পরিচালক প্রস্তুত। অ্যাকশন বললেই&lt;br /&gt;
+শুরু হবে 'অভিনয়'।  &lt;/p&gt;
+&lt;p&gt;লোকটা তখনও এলো চুলের দিকে তাকিয়ে। ঘর ভর্তি&lt;br /&gt;
+রাইফেল তার মাথার দিকে লোলু দৃষ্টিতে তাকিয়ে আছে।&lt;br /&gt;
+বেয়োনেটের খোঁচায় শেষ পর্যন্ত উঠে দাঁড়াতে হল তাকে,&lt;br /&gt;
+দৃষ্টি আগের মতই, নিস্তব্ধ।&lt;br /&gt;
+'হাত উঠাও হারামিকা বাচ্চা!', কেউ একজন বলল।&lt;br /&gt;
+'সালা কো লে যাও!'&lt;br /&gt;
+'নাহি, ইসে হাম ইহা হি দাফা কার দেংগে।'&lt;br /&gt;
+ছোট দাঁড়িঅলা একজন বলল,'হুজুর, আপকা উচিত হোগা&lt;br /&gt;
+ইসে উয়ো, উয়ে গাথা মে লে কার মারনা-'&lt;br /&gt;
+'ঠিক হ্যায়, লে যাও।', অমোঘ বাণীর মত কেও বলল।  &lt;/p&gt;
+&lt;p&gt;পরিচালক শেষ সিনের জন্য নির্দেশ শেষে এসে বসলেন।&lt;br /&gt;
+চোখে কৌতুহল, ঠোঁটে সেই হাসি।  &lt;/p&gt;
+&lt;p&gt;'আল্লা কা নাম লে হারামজাদে!'&lt;br /&gt;
+লোকটা বিড় বিড় করে বলল,'আমি যাকে ভালবাসতাম,&lt;br /&gt;
+সে মরে গেল।'&lt;br /&gt;
+'কেয়া? কেয়া কাঁহা?'&lt;br /&gt;
+'ইয়ে সালেকা তো আল্লাই নাহি হ্যায়!' কেও বলতে&lt;br /&gt;
+সবাই হেসে উঠল।&lt;br /&gt;
+লোকটাকে সোজা করে বিাশল একটা গর্তের মুখে&lt;br /&gt;
+দাঁড় করানোর দুই মিনিট পরই বাজখাঁই গলায়&lt;br /&gt;
+কেও বলল,'ফায়ার!'&lt;br /&gt;
+লোকটা টলে পড়তে পড়তে ভাবল,'সে আমাকে&lt;br /&gt;
+ভালবাসত, তাই আমি তার কাছে যাচ্ছি।'  &lt;/p&gt;
+&lt;p&gt;পরিচালক এখন পরিতৃপ্ত। তার ইউনিট এখন&lt;br /&gt;
+গোছানো হচ্ছে। হয়তো বা অন্য কোথাও শুটিং আছে তার,&lt;br /&gt;
+আমাদের পরিচালকের।  &lt;/p&gt;
+&lt;p&gt;লোকটার চোখ দু'টো খোলা ছিল, অনেক দিন।&lt;br /&gt;
+পঁচে গলে যাবার আগ পর্যন্ত।&lt;br /&gt;
+চোখ দু'টো ছিল হিংস্র, প্রতিশোধের আগুনে জ্বল জ্বলে&lt;br /&gt;
+দু'টো চোখ।  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;সকাল সোয়া এগারোটা, শনিবার&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;১ ভাদ্র, ১৪১৫&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;১৬ আগস্ট, ২০০৮&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ratul</dc:creator><pubDate>Thu, 14 Aug 2008 20:08:00 +0600</pubDate><guid>tag:,2008-08-14:posts/2008/08/14/অতিবাস্তব-মৃত্যু/</guid><category>prose</category></item></channel></rss>

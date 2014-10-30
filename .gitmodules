@@ -1,3 +1,6 @@
 [submodule "output"]
 	path = output
 	url = https://github.com/mnzr/mnzr.github.io.git
+[submodule "themes/pujangga"]
+	path = themes/pujangga
+	url = https://github.com/mnzr/pujangga.git

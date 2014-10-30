@@ -16,7 +16,7 @@ TIMEZONE = 'Asia/Dhaka'
 DEFAULT_LANG = u'en'
 
 # Appearance
-THEME = 'pujangga'
+THEME = 'themes/pujangga'
 DEFAULT_PAGINATION = 10
 DISPLAY_PAGES_ON_MENU = True
 
